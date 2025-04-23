@@ -8,6 +8,8 @@
 /dataSources.local.xml
 
 .DS_Store
+**/.DS_Store
 .idea/
 **/cmake-build-debug/
-DA2425_PRJ1_G307.zip
+DA2425_PRJ2_G307.zip
+*.zip
