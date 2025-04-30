@@ -7,8 +7,6 @@
 
 #define KEY_UP 72
 #define KEY_DOWN 80
-#define KEY_LEFT 75
-#define KEY_RIGHT 77
 #define KEY_ENTER 13
 
 class Menu {
@@ -19,8 +17,12 @@ public:
     void print_menu_header();
     void refresh_screen();
     void run();
+    void  previous_option();
+    void next_option();
+    bool is_selected(int i);
 private:
     std::vector<std::string> options;
+    int current_option = 0;
 };
 
 #endif

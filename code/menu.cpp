@@ -39,4 +39,29 @@ void Menu::run() {
     //TODO
 }
 
+void Menu::previous_option() {
+    current_option--;
+
+    if (current_option > options.size() - 1) {
+        current_option = 0;
+    }
+}
+
+void Menu::next_option() {
+    current_option++;
+
+    if (current_option < 0) {
+        current_option = options.size() - 1;
+    }
+}
+
+bool Menu::is_selected(int i) {
+    if (current_option == i) {
+        return true;
+    }
+
+    return false;
+}
+
+
 
