@@ -2,11 +2,15 @@
 #include "menu.h"
 
 int main() {
-    Menu menu;
+    Menu main_menu({
+        "0. What we have done",
+        "1. Select a data set"
+    });
 
-    menu.print_menu_header();
+    main_menu.print_menu_header();
 
-    menu.print_options();
+    main_menu.print_options();
+    //main_menu.refresh_screen();
 
 
     return 0;

@@ -13,18 +13,14 @@
 
 class Menu {
 public:
-    Menu();     // pode ser atualizado p receber um vetor de strings (opcoes) p conseguir criar submenus
+    Menu(const std::vector<std::string>& options);
     ~Menu();
     void print_options();
     void print_menu_header();
-    void clear_screen();
+    void refresh_screen();
     void run();
 private:
-    std::vector<std::string> options =
-    {
-        "0. What we have done",
-        "1. Select a data set"
-    };
+    std::vector<std::string> options;
 };
 
 #endif

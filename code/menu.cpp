@@ -2,7 +2,10 @@
 
 using namespace std;
 
-Menu::Menu() = default;
+Menu::Menu(const std::vector<std::string> &options) {
+    this->options = options;
+}
+
 Menu::~Menu() = default;
 
 /**
@@ -19,7 +22,7 @@ void Menu::print_menu_header() {
 /**
  * Clears the screen
  */
-void Menu::clear_screen() {
+void Menu::refresh_screen() {
     cout << "\033[2J\033[1;1H"; // ANSI escape codes to clear screen
 }
 
