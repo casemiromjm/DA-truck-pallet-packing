@@ -1,5 +1,5 @@
-#ifndef __MENU_H__
-#define __MENU_H__
+#ifndef MENU_H_
+#define MENU_H
 
 #include <string>
 #include <vector>
