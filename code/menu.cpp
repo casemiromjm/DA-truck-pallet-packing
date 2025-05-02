@@ -30,32 +30,31 @@ void Menu::refresh_screen() {
  * Prints Menu options to the screen
  */
 void Menu::print_options() {
-    for (const auto& opt : options) {
-        cout << opt << endl;
+    for (int i = 0; i < options.size(); i++) {
+        if (is_selected(i)) {
+            print_selected();
+        }
+        cout << options[i] << endl;
     }
-}
-
-void Menu::run() {
-    //TODO
 }
 
 void Menu::previous_option() {
     current_option--;
-
-    if (current_option > options.size() - 1) {
-        current_option = 0;
-    }
-}
-
-void Menu::next_option() {
-    current_option++;
 
     if (current_option < 0) {
         current_option = options.size() - 1;
     }
 }
 
-bool Menu::is_selected(int i) {
+void Menu::next_option() {
+    current_option++;
+
+    if (current_option > options.size() - 1) {
+        current_option = 0;
+    }
+}
+
+bool Menu::is_selected(const int& i) {
     if (current_option == i) {
         return true;
     }
@@ -63,5 +62,10 @@ bool Menu::is_selected(int i) {
     return false;
 }
 
+void Menu::print_selected() {
+    cout << "--> ";
+}
 
-
+void Menu::run() {
+    //TODO
+}
