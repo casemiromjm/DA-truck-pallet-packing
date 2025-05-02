@@ -5,8 +5,10 @@
 #include <vector>
 #include <iostream>
 
-#define KEY_UP 'H'
-#define KEY_DOWN 'K'
+#define KEY_UP 72
+#define KEY_DOWN 80
+#define ESC 27
+#define WINDOWS_SPECIAL_KEY 224
 #define KEY_ENTER 13
 
 class Menu {
@@ -19,11 +21,12 @@ public:
     void run();
     void previous_option();
     void next_option();
-    bool is_selected(const int& i);
-    void print_selected();
 private:
     std::vector<std::string> options;
     int current_option = 0;
+
+    bool is_selected(const int& i);
+    void print_selected();
 };
 
 #endif
