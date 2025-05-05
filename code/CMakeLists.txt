@@ -3,4 +3,9 @@ project(code)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(code main.cpp menu.cpp state.cpp ui_flow.cpp)
+add_executable(code main.cpp
+        menu.cpp
+        state.cpp
+        ui_flow.cpp
+        csv.cpp
+)
