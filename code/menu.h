@@ -1,9 +1,11 @@
-#ifndef MENU_H_
+#ifndef MENU_H
 #define MENU_H
 
 #include <string>
 #include <vector>
 #include <iostream>
+
+#include "state.h"
 
 #ifdef _WIN32       // assim o sebastiao consegue rodar tb
     #include <conio.h>
@@ -11,26 +13,27 @@
     #define WIN_KEY_DOWN 80
     #define WINDOWS_SPECIAL_KEY_2 224
     #define WINDOWS_SPECIAL_KEY_1 0
+    #define KEY_ENTER 13
 #else
     #include <termios.h>
     #include <unistd.h>
     #define KEY_UP 'A'
     #define KEY_DOWN 'B'
+    #define KEY_ENTER 10
 #endif
 
-
 #define ESC 27
-#define KEY_ENTER 13
+
 
 class Menu {
 public:
     Menu(const std::vector<std::string>& options);
-    Menu(const std::vector<std::string>& options, const std::string content);  // tlvz add um param de content
+    Menu(const std::vector<std::string>& options, const std::string &content);  // tlvz add um param de content
     ~Menu();
     void print_options();
     void print_content() const;
     void refresh_screen();
-    int run();
+    int run(State& app_state);
     void previous_option();
     void next_option();
     void print();

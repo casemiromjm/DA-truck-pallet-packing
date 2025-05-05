@@ -19,9 +19,20 @@ int main() {
             "========================================\n"
     );
 
-    while (true) {
-        // could use == operator
-        if (app_state.check_curr_state(State::MAIN)) {
+    int choice;
+    while ( (choice = main_menu.run(app_state)) != 3) {
+        switch (choice) {
+            // implemented functionalities
+            case 0:
+            break;
+
+            // select data set
+            case 1:
+            break;
+
+            // select algorithm
+            case 2:
+            break;
         }
     }
 

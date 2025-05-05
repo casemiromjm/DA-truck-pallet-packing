@@ -7,7 +7,7 @@ Menu::Menu(const std::vector<std::string> &options) {
     current_option = 0;
 }
 
-Menu::Menu(const std::vector<std::string> &options, const std::string content) {
+Menu::Menu(const std::vector<std::string> &options, const std::string &content) {
     this->options = options;
     this->content = content;
     current_option = 0;
@@ -114,15 +114,12 @@ int Menu::get_key() {
 }
 
 void Menu::print() {
-    //TODO
-
-    // if i am on the main menu, needs to print the header. otherwise it is unnecessary
-
     refresh_screen();
+    print_content();
     print_options();
 }
 
-int Menu::run() {
+int Menu::run(State& app_state) {
     while(true) {
         print();
         int key = get_key();
