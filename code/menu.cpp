@@ -119,7 +119,8 @@ void Menu::print() {
     print_options();
 }
 
-int Menu::run(State& app_state) {
+int Menu::run() {
+    // loop for reading the terminal
     while(true) {
         print();
         int key = get_key();

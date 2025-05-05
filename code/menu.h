@@ -33,7 +33,7 @@ public:
     void print_options();
     void print_content() const;
     void refresh_screen();
-    int run(State& app_state);
+    int run();
     void previous_option();
     void next_option();
     void print();
