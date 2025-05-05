@@ -7,17 +7,19 @@ Menu::Menu(const std::vector<std::string> &options) {
     current_option = 0;
 }
 
+Menu::Menu(const std::vector<std::string> &options, const std::string content) {
+    this->options = options;
+    this->content = content;
+    current_option = 0;
+}
+
 Menu::~Menu() = default;
 
 /**
  * Prints the Menu header to the screen
  */
-void Menu::print_menu_header() {
-    cout << "========================================\n"
-            "  Truck Delivery Packing Optimization   \n"
-            "developed by Casemiro, Rafael and Sebastiao\n"
-            "========================================\n"
-    << endl;
+void Menu::print_content() const {
+    cout << content << endl;
 }
 
 /**
@@ -112,6 +114,8 @@ int Menu::get_key() {
 }
 
 void Menu::print() {
+    //TODO
+
     // if i am on the main menu, needs to print the header. otherwise it is unnecessary
 
     refresh_screen();
