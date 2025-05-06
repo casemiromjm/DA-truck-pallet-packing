@@ -8,4 +8,6 @@ add_executable(code main.cpp
         state.cpp
         ui_flow.cpp
         csv.cpp
+        truck.cpp
+        pallet.cpp
 )
