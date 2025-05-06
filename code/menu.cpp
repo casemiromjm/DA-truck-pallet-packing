@@ -13,6 +13,13 @@ Menu::Menu(const std::vector<std::string> &options, const std::string &content) 
     current_option = 0;
 }
 
+Menu::Menu(const std::vector<std::string> &options, const std::string &content, const std::string& selection) {
+    this->options = options;
+    this->content = content;
+    this->selection = selection;
+    current_option = 0;
+}
+
 Menu::~Menu() = default;
 
 /**
@@ -69,6 +76,11 @@ void Menu::print_selected() {
     cout << "--> ";
 }
 
+void Menu::print_selection() const {
+    cout << selection << endl;
+}
+
+
 int Menu::getch() {
 #ifdef _WIN32
     return _getch();
@@ -94,21 +106,21 @@ int Menu::getch() {
 int Menu::get_key() {
     int ch = getch();
 
-#ifdef _WIN32
-    if (ch == WINDOWS_SPECIAL_KEY_1 !! ch == WINDOWS_SPECIAL_KEY_2) {
-        ch = getch();
-    }
+    #ifdef _WIN32
+        if (ch == WINDOWS_SPECIAL_KEY_1 !! ch == WINDOWS_SPECIAL_KEY_2) {
+            ch = getch();
+        }
 
-    // convert from windows to unix
-    switch (ch) {
-        case WIN_KEY_UP: return 'A';
-        case WIN_KEY_DOWN: return 'B';
-    }
-#else
-    if (ch == ESC && getch() == '[') {
-        return getch();
-    }
-#endif
+        // convert from windows to unix
+        switch (ch) {
+            case WIN_KEY_UP: return 'A';
+            case WIN_KEY_DOWN: return 'B';
+        }
+    #else
+        if (ch == ESC && getch() == '[') {
+            return getch();
+        }
+    #endif
 
     return ch;
 }
@@ -116,6 +128,11 @@ int Menu::get_key() {
 void Menu::print() {
     refresh_screen();
     print_content();
+
+    if (!selection.empty()) {
+        print_selection();
+    }
+
     print_options();
 }
 

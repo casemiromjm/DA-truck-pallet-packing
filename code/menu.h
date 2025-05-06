@@ -29,16 +29,23 @@ class Menu {
 public:
     Menu(const std::vector<std::string>& options);
     Menu(const std::vector<std::string>& options, const std::string &content);  // tlvz add um param de content
+    Menu(const std::vector<std::string>& options, const std::string &content, const std::string& selection);
     ~Menu();
+
     void print_options();
     void print_content() const;
     void refresh_screen();
-    int run();
+    void print_selection() const;
+    void print();
+
     void previous_option();
     void next_option();
-    void print();
+
+    int run();
+
 private:
     std::string content;
+    std::string selection;
     std::vector<std::string> options;
     int current_option;
 

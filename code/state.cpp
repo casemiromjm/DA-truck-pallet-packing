@@ -1,7 +1,7 @@
 #include "state.h"
 
 State::State() {
-    current_state = MAIN;
+    current_state = StateID::MAIN;
 }
 
 State::StateID State::get_curr_state() const {

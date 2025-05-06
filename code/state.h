@@ -3,7 +3,7 @@
 
 class State {
 public:
-    enum StateID{
+    enum class StateID {
         // main menu
         MAIN,
         // info about what we implemented
