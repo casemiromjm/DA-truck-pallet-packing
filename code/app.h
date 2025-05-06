@@ -18,11 +18,11 @@ public:
     };
 
     enum class Dataset {
-        DATASET1,
+        DATASET1 = 0,
         DATASET2,
         DATASET3,
         DATASET4,
-        NONE
+        NONE = -1
     };
 
     App();
@@ -35,6 +35,8 @@ public:
     Dataset get_dataset() const;
     std::string get_dataset_name() const;
     void set_dataset(Dataset data);
+
+    void read_dataset();
 
     void run();
 

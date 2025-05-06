@@ -1,10 +1,13 @@
 #include "ui_flow.h"
 #include "app.h"
+#include "menu.h"
 
-static const std::string HEADER = "========================================\n"
-                           "  Truck Delivery Packing Optimization   \n"
-                           "developed by Casemiro, Rafael and Sebastiao\n"
-                           "========================================\n";
+// technically it is part of the class App, but for simplification’s sake, it is on another file
+
+static const std::string HEADER =  "========================================\n"
+                                   "  Truck Delivery Packing Optimization   \n"
+                                   "developed by Casemiro, Rafael and Sebastiao\n"
+                                   "========================================\n";
 
 int UI::show_main_menu(State& app_state, const App& app) {
     app_state.update_state(State::StateID::MAIN);
@@ -17,7 +20,8 @@ int UI::show_main_menu(State& app_state, const App& app) {
             "0. What we have done",
             "1. Select an algorithm",
             "2. Select a data set",
-            "3. Finish program"
+            "3. Calculate Knapsack Solution",
+            "4. Finish program"
         },
         HEADER,
         selec
@@ -68,6 +72,7 @@ int UI::show_algorithm_menu(State& app_state) {
 }
 
 int UI::show_results_menu(State& app_state) {
+    app_state.update_state(State::StateID::RESULTS);
     //TODO
     return 0;
 }

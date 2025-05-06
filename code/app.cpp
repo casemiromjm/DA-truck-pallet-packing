@@ -1,5 +1,6 @@
 #include "app.h"
 
+#include "csv.h"
 #include "ui_flow.h"
 
 App::App() = default;
@@ -41,28 +42,37 @@ void App::set_dataset(Dataset data) {
     chosen_dataset = data;
 }
 
+void App::read_dataset() {
+    Csv csv;
+    //TODO
+}
+
+
 void App::run() {
 
     // main app loop
     while (true) {
-        switch (UI::show_main_menu(app_state, *this)) {
+        switch ((State::StateID)UI::show_main_menu(app_state, *this)) {
             // implemented functionalities
-            case 0:
+            case State::StateID::INFO:
                 UI::show_info_menu(app_state);
                 break;
 
-                // select data set
-            case 1:
+            // select algorithm
+            case State::StateID::ALGORITHM:
                 set_algorithm((Algorithm)UI::show_algorithm_menu(app_state));
                 break;
 
-                // select algorithm
-            case 2:
+                // select dataset
+            case State::StateID::DATASET:
                 set_dataset((Dataset)UI::show_dataset_menu(app_state));
                 break;
 
+            case State::StateID::RESULTS:
+                break;
+
                 // finish program opt
-            case 3:
+            case State::StateID::FINISHED:
                 return;
         }
     }

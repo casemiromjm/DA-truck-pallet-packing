@@ -2,7 +2,6 @@
 #define UI_FLOW_H
 
 #include "app.h"
-#include "menu.h"
 #include "state.h"
 
 namespace UI {

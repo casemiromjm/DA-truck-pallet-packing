@@ -7,10 +7,9 @@
 class Csv {
     public:
         std::vector<std::vector<std::string>> getData();
-        void read_dataset(const int& dataset_id);
+        void readCSV(const std::string& file_name);
     private:
         std::vector<std::vector<std::string>> data;     // where the csv data is stored
-        void readCSV(const std::string& file_name);
 };
 
 #endif
