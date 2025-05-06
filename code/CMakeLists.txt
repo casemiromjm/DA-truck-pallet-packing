@@ -10,4 +10,5 @@ add_executable(code main.cpp
         csv.cpp
         truck.cpp
         pallet.cpp
+        app.cpp
 )
