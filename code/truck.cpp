@@ -14,3 +14,11 @@ double Truck::get_capacity() const {
 double Truck::get_max_pallets() const {
     return max_pallets;
 }
+
+std::vector<Pallet> Truck::get_pallets() const {
+    return pallets;
+}
+
+void Truck::add_pallet(const Pallet& pallet) {
+    this->pallets.push_back(pallet);
+}
