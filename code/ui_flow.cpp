@@ -45,11 +45,11 @@ int UI::show_dataset_menu(State& app_state) {
     app_state.update_state(State::StateID::DATASET);
     Menu dataset(
         {
-            "0. Example Dataset 1",
-            "1. Example Dataset 2",
-            "2. Example Dataset 3",
-            "3. Example Dataset 4",
-            "4. Go back to Main Menu"
+            "1. Example Dataset 1",
+            "2. Example Dataset 2",
+            "3. Example Dataset 3",
+            "4. Example Dataset 4",
+            "0. Go back to Main Menu"
         }
     );
 
@@ -60,11 +60,11 @@ int UI::show_algorithm_menu(State& app_state) {
     app_state.update_state(State::StateID::ALGORITHM);
     Menu algorithms (
         {
-        "0. Brute-Force Approach",
-        "1. Dynamic Programming Approach",
-        "2. Greedy Approach",
-        "3. Integer Linear Programming Approach",
-        "4. Go back to Main Menu"
+        "1. Brute-Force Approach",
+        "2. Dynamic Programming Approach",
+        "3. Greedy Approach",
+        "4. Integer Linear Programming Approach",
+        "0. Go back to Main Menu"
         }
     );
 

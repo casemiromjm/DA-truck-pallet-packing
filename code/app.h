@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "state.h"
+#include "truck.h"
 
 class App {
 public:
@@ -60,6 +61,10 @@ private:
 
     Algorithm chosen_algorithm = Algorithm::NONE;
     Dataset chosen_dataset = Dataset::NONE;
+
+    Truck truck;
+
+    std::string convert_num_str(int num);  // auxiliary function
 };
 
 #endif

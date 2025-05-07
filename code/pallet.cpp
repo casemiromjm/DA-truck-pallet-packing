@@ -4,6 +4,7 @@ Pallet::Pallet(int id, double weight, double value) {
     this->id = id;
     this->weight = weight;
     this->value = value;
+    weight_value_ratio = 0;
 }
 
 Pallet::~Pallet() = default;

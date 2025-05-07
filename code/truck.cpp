@@ -15,10 +15,18 @@ double Truck::get_max_pallets() const {
     return max_pallets;
 }
 
-std::vector<Pallet> Truck::get_pallets() const {
-    return pallets;
+std::vector<Pallet> Truck::get_loaded_pallets() const {
+    return loaded_pallets;
 }
 
-void Truck::add_pallet(const Pallet& pallet) {
-    this->pallets.push_back(pallet);
+void Truck::load_pallet(const Pallet& pallet) {
+    this->loaded_pallets.push_back(pallet);
+}
+
+std::vector<Pallet> Truck::get_available_pallets() const {
+    return available_pallets;
+}
+
+void Truck::add_available_pallet(const Pallet& pallet) {
+    this->available_pallets.push_back(pallet);
 }

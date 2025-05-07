@@ -1,6 +1,7 @@
 #include "app.h"
 
 #include "csv.h"
+#include "truck.h"
 #include "ui_flow.h"
 
 App::App() = default;
@@ -43,10 +44,43 @@ void App::set_dataset(Dataset data) {
 }
 
 void App::read_dataset() {
-    Csv csv;
-    //TODO
+    Csv file;
+
+    const std::string dataset_num = convert_num_str((int)get_dataset()+1);
+
+    // como estamos simulando o terminal do sistema no clion, é preciso considerar q o ./code vem da pasta cmake-build-debug, por isso o path relativo volta assim
+
+    // read truck and pallets file
+    file.readCSV("../data/datasets/TruckAndPallets_" + dataset_num + ".csv");
+
+    Truck t (std::stod(file.getData()[0][0]), std::stod(file.getData()[0][1]));
+
+    // read pallets file
+    file.readCSV("../data/datasets/Pallets_" + dataset_num + ".csv");
+
+    for (auto pallet : file.getData()) {
+
+        Pallet p (std::stoi(pallet[0]), std::stod(pallet[1]), std::stod(pallet[2]));
+
+        t.add_available_pallet(p);
+    }
+
+    // "returns" the truck to "main" context
+    truck = t;
 }
 
+/**
+ * Converts an int to a string and expands to two digits when necessary
+ * @param num Conversion target
+ * @return Converted num
+ */
+std::string App::convert_num_str(int num) {
+    if (abs(num) > 10) {
+        return std::to_string(num);
+    }
+
+    return "0"+std::to_string(num);
+}
 
 void App::run() {
 
@@ -66,9 +100,11 @@ void App::run() {
                 // select dataset
             case State::StateID::DATASET:
                 set_dataset((Dataset)UI::show_dataset_menu(app_state));
+                read_dataset();
                 break;
 
             case State::StateID::RESULTS:
+                //TODO
                 break;
 
                 // finish program opt
