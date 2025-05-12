@@ -115,6 +115,7 @@ int Menu::get_key() {
         switch (ch) {
             case WIN_KEY_UP: return 'A';
             case WIN_KEY_DOWN: return 'B';
+            case WIN_KEY_ENTER: return 10;
         }
     #else
         if (ch == ESC && getch() == '[') {
