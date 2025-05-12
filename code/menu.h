@@ -13,7 +13,7 @@
     #define WIN_KEY_DOWN 80
     #define WINDOWS_SPECIAL_KEY_2 224
     #define WINDOWS_SPECIAL_KEY_1 0
-    #define KEY_ENTER 13
+    #define WIN_KEY_ENTER 13
 #else
     #include <termios.h>
     #include <unistd.h>
@@ -22,6 +22,9 @@
     #define KEY_ENTER 10
 #endif
 
+#define KEY_UP 'A'
+#define KEY_DOWN 'B'
+#define KEY_ENTER 10
 #define ESC 27
 
 
