@@ -83,34 +83,60 @@ std::string App::convert_num_str(int num) {
 }
 
 void App::run() {
-
-    // main app loop
     while (true) {
-        switch ((State::StateID)UI::show_main_menu(app_state, *this)) {
-            // implemented functionalities
-            case State::StateID::INFO:
-                UI::show_info_menu(app_state);
+        switch (app_state.get_curr_state()) {
+            case State::StateID::MAIN: {
+                int choice = UI::show_main_menu(*this);
+                switch (choice) {
+                    case 0: app_state.update_state(State::StateID::INFO); break;
+                    case 1: app_state.update_state(State::StateID::ALGORITHM); break;
+                    case 2: app_state.update_state(State::StateID::DATASET); break;
+                    case 3: app_state.update_state(State::StateID::RESULTS); break;
+                    case 4: app_state.update_state(State::StateID::FINISHED); break;
+                }
                 break;
+            }
 
-            // select algorithm
-            case State::StateID::ALGORITHM:
-                set_algorithm((Algorithm)UI::show_algorithm_menu(app_state));
+            case State::StateID::INFO: {
+                int choice = UI::show_info_menu();
+                if (choice == 0) app_state.update_state(State::StateID::MAIN);
                 break;
+            }
 
-                // select dataset
-            case State::StateID::DATASET:
-                set_dataset((Dataset)UI::show_dataset_menu(app_state));
-                read_dataset();
+            case State::StateID::ALGORITHM: {
+                int choice = UI::show_algorithm_menu();
+                if (choice == 0) {
+                    app_state.update_state(State::StateID::MAIN);
+                } else {
+                    set_algorithm(static_cast<Algorithm>(choice - 1)); // Ajuste para o enum
+                    app_state.update_state(State::StateID::MAIN);
+                }
                 break;
+            }
 
-            case State::StateID::RESULTS:
-                //TODO
+            case State::StateID::DATASET: {
+                int choice = UI::show_dataset_menu();
+                if (choice == 0) {
+                    app_state.update_state(State::StateID::MAIN);
+                } else {
+                    set_dataset(static_cast<Dataset>(choice - 1)); // Ajuste para o enum
+                    read_dataset();
+                    app_state.update_state(State::StateID::MAIN);
+                }
                 break;
+            }
 
-                // finish program opt
+            case State::StateID::RESULTS: {
+                if (chosen_algorithm == Algorithm::BRUTE_FORCE) {
+                    auto result = run_brute_force();
+                    // Mostrar resultados (implemente UI::show_results() se necessário)
+                }
+                app_state.update_state(State::StateID::MAIN);
+                break;
+            }
+
             case State::StateID::FINISHED:
-                return;
+                return; // Encerra o programa
         }
     }
 }
-

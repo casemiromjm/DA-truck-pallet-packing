@@ -65,6 +65,8 @@ private:
     Truck truck;
 
     std::string convert_num_str(int num);  // auxiliary function
+
+    std::vector<Pallet> run_brute_force() const; //novo
 };
 
 #endif
