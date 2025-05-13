@@ -49,6 +49,12 @@ int UI::show_dataset_menu() {
             "2. Example Dataset 2",
             "3. Example Dataset 3",
             "4. Example Dataset 4",
+            "5. Example Dataset 5",
+            "6. Example Dataset 6",
+            "7. Example Dataset 7",
+            "8. Example Dataset 8",
+            "9. Example Dataset 9",
+            "10. Example Dataset 10",
         }
     );
 
@@ -70,9 +76,20 @@ int UI::show_algorithm_menu() {
     return algorithms.run();
 }
 
-int UI::show_results_menu() {
+int UI::show_results_menu(std::vector<Pallet> result) {
 
+    std::string content;
 
-    return 0;
+    for (int i = 0; i < result.size(); i++) {
+        content += std::to_string(result[i].get_id()) + ", "  + std::to_string(result[i].get_weight()) + ", " + std::to_string(result[i].get_value()) + '\n';
+    }
+
+    Menu results(
+        {
+        "0. Go back to Main Menu"
+        }, content
+    );
+
+    return results.run();
 }
 

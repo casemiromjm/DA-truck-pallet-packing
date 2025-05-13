@@ -15,14 +15,6 @@ double Truck::get_max_pallets() const {
     return max_pallets;
 }
 
-std::vector<Pallet> Truck::get_loaded_pallets() const {
-    return loaded_pallets;
-}
-
-void Truck::load_pallet(const Pallet& pallet) {
-    this->loaded_pallets.push_back(pallet);
-}
-
 std::vector<Pallet> Truck::get_available_pallets() const {
     return available_pallets;
 }

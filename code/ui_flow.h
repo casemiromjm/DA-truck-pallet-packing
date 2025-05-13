@@ -9,9 +9,7 @@ namespace UI {
     int show_info_menu();
     int show_dataset_menu();
     int show_algorithm_menu();
-    int show_results_menu();
-
-    void show_knapsack_results(const std::vector<Pallet>& result, const Truck& truck);
+    int show_results_menu(std::vector<Pallet> result);
 }
 
 #endif

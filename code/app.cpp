@@ -18,9 +18,6 @@ App::Algorithm App::get_algorithm() const {
 }
 
 std::string App::get_algorithm_name() const {
-    if (chosen_algorithm == Algorithm::NONE) {
-        return algorithm_names.back();
-    }
 
     return algorithm_names[(int)get_algorithm()];
 }
@@ -30,9 +27,6 @@ App::Dataset App::get_dataset() const {
 }
 
 std::string App::get_dataset_name() const {
-    if (chosen_dataset == Dataset::NONE) {
-        return dataset_names.back();
-    }
 
     return dataset_names[(int)get_dataset()];
 }
@@ -48,7 +42,7 @@ void App::set_dataset(Dataset data) {
 void App::read_dataset() {
     Csv file;
 
-    const std::string dataset_num = convert_num_str((int)get_dataset()+1);
+    const std::string dataset_num = convert_num_str((int)get_dataset());
 
     // como estamos simulando o terminal do sistema no clion, é preciso considerar q o ./code vem da pasta cmake-build-debug, por isso o path relativo volta assim
 
@@ -114,7 +108,7 @@ void App::run() {
                 if (choice == 0) {
                     app_state.update_state(State::StateID::MAIN);
                 } else {
-                    set_algorithm(static_cast<Algorithm>(choice - 1)); // Ajuste para o enum
+                    set_algorithm(static_cast<Algorithm>(choice));
                     app_state.update_state(State::StateID::MAIN);
                 }
                 break;
@@ -125,7 +119,7 @@ void App::run() {
                 if (choice == 0) {
                     app_state.update_state(State::StateID::MAIN);
                 } else {
-                    set_dataset(static_cast<Dataset>(choice - 1)); // Ajuste para o enum
+                    set_dataset(static_cast<Dataset>(choice));
                     read_dataset();
                     app_state.update_state(State::StateID::MAIN);
                 }
@@ -133,11 +127,17 @@ void App::run() {
             }
 
             case State::StateID::RESULTS: {
+                std::vector<Pallet> result;
+
                 if (chosen_algorithm == Algorithm::BRUTE_FORCE) {
-                    auto result = run_brute_force();
-                    // Mostrar resultados (implemente UI::show_results() se necessário)
+                    result = run_brute_force();
                 }
-                app_state.update_state(State::StateID::MAIN);
+
+                int choice = UI::show_results_menu(result);
+                if (choice == 0) {
+                    app_state.update_state(State::StateID::MAIN);
+                }
+
                 break;
             }
 

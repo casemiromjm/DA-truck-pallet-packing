@@ -11,19 +11,25 @@ class App {
 public:
 
     enum class Algorithm {
-        BRUTE_FORCE = 0,
+        NONE,
+        BRUTE_FORCE,
         DYNAMIC,
         GREEDY,
-        ILP,
-        NONE = -1
+        ILP
     };
 
     enum class Dataset {
-        DATASET1 = 0,
+        NONE,
+        DATASET1,
         DATASET2,
         DATASET3,
         DATASET4,
-        NONE = -1
+        DATASET5,
+        DATASET6,
+        DATASET7,
+        DATASET8,
+        DATASET9,
+        DATASET10
     };
 
     App();
@@ -44,19 +50,25 @@ public:
 private:
     State app_state;
     std::vector<std::string> algorithm_names = {
+        "None",
         "Brute-Force",
         "Dynamic Programming",
         "Greedy",
-        "ILP",
-        "None"
+        "ILP"
     };
 
     std::vector<std::string> dataset_names = {
+        "None",
         "Example 1",
         "Example 2",
         "Example 3",
         "Example 4",
-        "None"
+        "Example 5",
+        "Example 6",
+        "Example 7",
+        "Example 8",
+        "Example 9",
+        "Example 10",
     };
 
     Algorithm chosen_algorithm = Algorithm::NONE;

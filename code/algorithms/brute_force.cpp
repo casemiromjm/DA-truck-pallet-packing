@@ -10,7 +10,6 @@ std::vector<Pallet> brute_force_packing(const Truck& truck) {
 
     std::vector<Pallet> available_pallets = truck.get_available_pallets();
     double truck_capacity = truck.get_capacity();
-    double max_pallets = truck.get_max_pallets();
 
     int n = available_pallets.size();
     int bit_mask;
@@ -19,7 +18,7 @@ std::vector<Pallet> brute_force_packing(const Truck& truck) {
     double max_value = 0.0;
 
     //o numero maximo de combinações de paletes possivel de fazer é 2^n (sendo n o numero de paletes disponiveis)
-    int all_combinations = pow(2, n);
+    int all_combinations = 1 << n;
 
     //percorrer todas as combinações
     for (int combination_nr = 0; combination_nr < all_combinations; combination_nr++) {
@@ -47,7 +46,7 @@ std::vector<Pallet> brute_force_packing(const Truck& truck) {
 
         //antes de atualizar como "melhor escolha" temos de ver se o peso é suportado, se o numero de paletes do subset
         //é menor que o numero maximo de paletes suportado e se o valor atual é melhor que o maior valor até agora
-        if ((current_weight <= truck_capacity) && (subset.size() <= max_pallets) && (current_value > max_value)) {
+        if ((current_weight <= truck_capacity) && (current_value > max_value)) {
 
             max_value = current_value;
             best_subset = subset;

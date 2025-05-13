@@ -5,9 +5,9 @@ class State {
 public:
     enum class StateID {
         // main menu
-        MAIN = -1,
+        MAIN,
         // info about what we implemented
-        INFO = 0,
+        INFO,
         // choose algorithm screen
         ALGORITHM,
         // reading dataset screen
