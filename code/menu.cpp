@@ -107,7 +107,7 @@ int Menu::get_key() {
     int ch = getch();
 
     #ifdef _WIN32
-        if (ch == WINDOWS_SPECIAL_KEY_1 !! ch == WINDOWS_SPECIAL_KEY_2) {
+        if (ch == WINDOWS_SPECIAL_KEY_1 || ch == WINDOWS_SPECIAL_KEY_2) {
             ch = getch();
         }
 

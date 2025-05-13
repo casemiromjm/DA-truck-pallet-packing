@@ -11,4 +11,5 @@ add_executable(code main.cpp
         truck.cpp
         pallet.cpp
         app.cpp
+        algorithms/brute_force.cpp
 )
