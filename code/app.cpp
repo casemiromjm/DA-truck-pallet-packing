@@ -4,6 +4,8 @@
 #include "truck.h"
 #include "ui_flow.h"
 
+#include "algorithms/brute_force.h"
+
 App::App(): truck(0,0) {}
 
 
@@ -80,6 +82,10 @@ std::string App::convert_num_str(int num) {
     }
 
     return "0"+std::to_string(num);
+}
+
+std::vector<Pallet> App::run_brute_force() const {
+    return brute_force_packing(truck);
 }
 
 void App::run() {
