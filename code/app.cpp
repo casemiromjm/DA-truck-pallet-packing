@@ -4,11 +4,7 @@
 #include "truck.h"
 #include "ui_flow.h"
 
-#include "algorithms/brute_force.h"
-
-App::App() : truck(0.0, 0.0) {  // Inicializa com capacidade e max_pallets = 0 (será sobrescrito depois)
-    // Outras inicializações, se necessário
-}
+App::App() : truck(0,0){}
 
 State::StateID App::get_app_state() const {
     return app_state.get_curr_state();
@@ -85,13 +81,6 @@ std::string App::convert_num_str(int num) {
     return "0"+std::to_string(num);
 }
 
-std::vector<Pallet> App::run_brute_force() const {
-
-    return brute_force_packing(truck);
-}
-
-
-
 void App::run() {
     while (true) {
         switch (app_state.get_curr_state()) {
@@ -150,4 +139,3 @@ void App::run() {
         }
     }
 }
-
