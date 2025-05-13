@@ -11,14 +11,14 @@ public:
     ~Truck();
 
     double get_capacity() const;
-    double get_max_pallets() const;
+    double get_num_pallets() const;
 
     std::vector<Pallet> get_available_pallets() const;
     void add_available_pallet(const Pallet& pallet);
 
 private:
     double capacity;
-    double max_pallets;
+    double num_pallets;
     std::vector<Pallet> available_pallets;        // n é definitivo (vector), pq n sei como seriam os algoritmos
 };
 

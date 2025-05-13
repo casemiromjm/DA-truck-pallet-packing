@@ -1,8 +1,8 @@
 #include "truck.h"
 
-Truck::Truck(double capacity, double max_pallets) {
+Truck::Truck(double capacity, double num_pallets) {
     this->capacity = capacity;
-    this->max_pallets = max_pallets;
+    this->num_pallets = num_pallets;
 }
 
 Truck::~Truck() = default;
@@ -11,8 +11,8 @@ double Truck::get_capacity() const {
     return capacity;
 }
 
-double Truck::get_max_pallets() const {
-    return max_pallets;
+double Truck::get_num_pallets() const {
+    return num_pallets;
 }
 
 std::vector<Pallet> Truck::get_available_pallets() const {
