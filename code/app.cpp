@@ -4,7 +4,8 @@
 #include "truck.h"
 #include "ui_flow.h"
 
-App::App() : truck(0,0){}
+App::App(): truck(0,0) {}
+
 
 State::StateID App::get_app_state() const {
     return app_state.get_curr_state();
