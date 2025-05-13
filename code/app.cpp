@@ -71,7 +71,7 @@ void App::read_dataset() {
  * @return Converted num
  */
 std::string App::convert_num_str(int num) {
-    if (abs(num) > 10) {
+    if (abs(num) >= 10) {
         return std::to_string(num);
     }
 
