@@ -15,8 +15,8 @@ Use different algorithms approaches:
 Data used in the project is inside the `data` folder. A datset is structed as 2 CSV files: `TruckAndPallets_[X].csv` and `Pallets_[X].csv`. The first contains the truck capacity and number of pallets, while the second contains the pallets' weights and profits. The `[X]` is the identifier of the dataset.
 
 ## TODO
-- [ ] T1.1 - Simple command-line menu that shows all implemented functionalities. Must be possible to choose a dataset, choose the algorithmic approach and view the reuslts. (1.0 point)
-- [ ] T1.2 - Read and Parse input data. This funcionality is accessible through menu (0.5 points)
+- [X] T1.1 - Simple command-line menu that shows all implemented functionalities. Must be possible to choose a dataset, choose the algorithmic approach and view the reuslts. (1.0 point)
+- [X] T1.2 - Read and Parse input data. This funcionality is accessible through menu (0.5 points)
 - [ ] T1.3 - Documentation using Doxygen for all implemented code. It should indicate *time **AND** space complexity for each algorithm*. (1.5 points)
 
 - [ ] T2.1 - *Exhaustive / Brute-Force Approach*. Analyze performance of this approach. Can implement a backtracking approach to try to improve effiency. (3.0 points)
