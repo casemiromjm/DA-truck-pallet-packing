@@ -5,6 +5,7 @@
 #include "ui_flow.h"
 
 #include "algorithms/brute_force.h"
+#include "algorithms/dynamic_prog.h"
 
 App::App(): truck(0,0) {}
 
@@ -82,6 +83,10 @@ std::vector<Pallet> App::run_brute_force() const {
     return brute_force_packing(truck);
 }
 
+std::vector<Pallet> App::run_dp() const {
+    return dp_packing(truck);
+}
+
 void App::run() {
     while (true) {
         switch (app_state.get_curr_state()) {
@@ -131,6 +136,11 @@ void App::run() {
 
                 if (chosen_algorithm == Algorithm::BRUTE_FORCE) {
                     result = run_brute_force();
+                }
+
+                if (chosen_algorithm == Algorithm::DYNAMIC) {
+                    result = run_dp()
+                    ;
                 }
 
                 int choice = UI::show_results_menu(result);

@@ -12,4 +12,5 @@ add_executable(code main.cpp
         pallet.cpp
         app.cpp
         algorithms/brute_force.cpp
+        algorithms/dynamic_prog.cpp
 )

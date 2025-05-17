@@ -10,8 +10,8 @@ public:
     Truck(double capacity, double max_pallets);
     ~Truck();
 
-    double get_capacity() const;
-    double get_num_pallets() const;
+    int get_capacity() const;
+    int get_num_pallets() const;
 
     std::vector<Pallet> get_available_pallets() const;
     void add_available_pallet(const Pallet& pallet);

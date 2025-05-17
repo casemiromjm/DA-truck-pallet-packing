@@ -9,7 +9,7 @@
 std::vector<Pallet> brute_force_packing(const Truck& truck) {
 
     std::vector<Pallet> available_pallets = truck.get_available_pallets();
-    double truck_capacity = truck.get_capacity();
+    int truck_capacity = truck.get_capacity();
 
     int n = available_pallets.size();
     int bit_mask;

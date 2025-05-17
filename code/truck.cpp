@@ -7,11 +7,11 @@ Truck::Truck(double capacity, double num_pallets) {
 
 Truck::~Truck() = default;
 
-double Truck::get_capacity() const {
+int Truck::get_capacity() const {
     return capacity;
 }
 
-double Truck::get_num_pallets() const {
+int Truck::get_num_pallets() const {
     return num_pallets;
 }
 
