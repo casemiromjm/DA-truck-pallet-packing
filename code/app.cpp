@@ -7,6 +7,8 @@
 #include "algorithms/brute_force.h"
 #include "algorithms/dynamic_prog.h"
 
+#include "performance_data/performance_data.h"
+
 App::App(): truck(0,0) {}
 
 
@@ -97,7 +99,8 @@ void App::run() {
                     case 1: app_state.update_state(State::StateID::ALGORITHM); break;
                     case 2: app_state.update_state(State::StateID::DATASET); break;
                     case 3: app_state.update_state(State::StateID::RESULTS); break;
-                    case 4: app_state.update_state(State::StateID::FINISHED); break;
+                    case 4: app_state.update_state(State::StateID::DATA_CONSTRUCT); break;
+                    case 5: app_state.update_state(State::StateID::FINISHED); break;
                 }
                 break;
             }
@@ -148,6 +151,17 @@ void App::run() {
                     app_state.update_state(State::StateID::MAIN);
                 }
 
+                break;
+            }
+
+            case State::StateID::DATA_CONSTRUCT: {
+                construct_data_csv();
+
+                int choice = UI::show_performance_data();
+
+                if (choice == 0) {
+                    app_state.update_state(State::StateID::MAIN);
+                }
                 break;
             }
 

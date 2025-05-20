@@ -20,7 +20,8 @@ int UI::show_main_menu(const App& app) {
             "1. Select an algorithm",
             "2. Select a data set",
             "3. Calculate Knapsack Solution",
-            "4. Finish program"
+            "4. Construct performance CSV",
+            "5. Finish program"
         },
         HEADER,
         selec
@@ -96,3 +97,15 @@ int UI::show_results_menu(std::vector<Pallet> result, const std::chrono::microse
     return results.run();
 }
 
+int UI::show_performance_data() {
+
+    std::string content = "Data loaded in the csv";
+
+    Menu performance_data(
+        {
+        "0. Go back to Main Menu"
+        }, content
+    );
+
+    return performance_data.run();
+}

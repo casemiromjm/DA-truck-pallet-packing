@@ -13,4 +13,5 @@ add_executable(code main.cpp
         app.cpp
         algorithms/brute_force.cpp
         algorithms/dynamic_prog.cpp
+        performance_data/performance_data.cpp
 )
