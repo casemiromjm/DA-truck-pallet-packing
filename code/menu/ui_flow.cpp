@@ -76,13 +76,16 @@ int UI::show_algorithm_menu() {
     return algorithms.run();
 }
 
-int UI::show_results_menu(std::vector<Pallet> result) {
+int UI::show_results_menu(std::vector<Pallet> result, const std::chrono::microseconds &total_duration) {
 
     std::string content;
+    std::string final_duration = "Time elapsed: " + std::to_string(total_duration.count());
 
     for (int i = 0; i < result.size(); i++) {
         content += std::to_string(result[i].get_id()) + ", "  + std::to_string(result[i].get_weight()) + ", " + std::to_string(result[i].get_value()) + '\n';
     }
+
+    content += '\n' + final_duration + " µs";
 
     Menu results(
         {

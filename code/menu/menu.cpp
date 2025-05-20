@@ -73,7 +73,7 @@ bool Menu::is_selected(const int& i) {
 }
 
 void Menu::print_selected() {
-    cout << "--> ";
+    cout << "👉🏻 ";
 }
 
 void Menu::print_selection() const {

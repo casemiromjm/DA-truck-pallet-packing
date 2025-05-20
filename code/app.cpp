@@ -79,12 +79,12 @@ std::string App::convert_num_str(int num) {
     return "0"+std::to_string(num);
 }
 
-std::vector<Pallet> App::run_brute_force() const {
-    return brute_force_packing(truck);
+std::vector<Pallet> App::run_brute_force() {
+    return brute_force_packing(truck, &total_duration);
 }
 
-std::vector<Pallet> App::run_dp() const {
-    return dp_packing(truck);
+std::vector<Pallet> App::run_dp() {
+    return dp_packing(truck, &total_duration);
 }
 
 void App::run() {
@@ -139,10 +139,11 @@ void App::run() {
                 }
 
                 else if (chosen_algorithm == Algorithm::DYNAMIC) {
+
                     result = run_dp();
                 }
 
-                int choice = UI::show_results_menu(result);
+                int choice = UI::show_results_menu(result, total_duration);
                 if (choice == 0) {
                     app_state.update_state(State::StateID::MAIN);
                 }
