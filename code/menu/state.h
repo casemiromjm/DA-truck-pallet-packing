@@ -14,6 +14,8 @@ public:
         DATASET,
         // show results screen
         RESULTS,
+        // construct the performance CSV
+        DATA_CONSTRUCT,
         FINISHED
     };
 
