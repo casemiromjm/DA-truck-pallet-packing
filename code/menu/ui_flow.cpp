@@ -4,11 +4,17 @@
 
 // technically it is part of the class App, but for simplification’s sake, it is on another file
 
+// Reusable header
 static const std::string HEADER =  "========================================\n"
                                    "  Truck Delivery Packing Optimization   \n"
                                    "developed by Casemiro, Rafael and Sebastiao\n"
                                    "========================================\n";
 
+/**
+ * Display Main Menu
+ * @param app App instance
+ * @return Chosen option
+ */
 int UI::show_main_menu(const App& app) {
 
     std::string selec = "ALGORITHM: " + app.get_algorithm_name() + '\n' + "DATASET: " + app.get_dataset_name() + '\n';
@@ -19,9 +25,9 @@ int UI::show_main_menu(const App& app) {
             "0. What we have done",
             "1. Select an algorithm",
             "2. Select a data set",
-            "3. Calculate Knapsack Solution",
-            "4. Construct performance CSV",
-            "5. Finish program"
+            "3. Solve 0/1 Knapsack Problem",
+            "4. Generate performance report (CSV)",
+            "5. Exit program"
         },
         HEADER,
         selec
@@ -30,17 +36,28 @@ int UI::show_main_menu(const App& app) {
     return main_menu.run();
 }
 
+/**
+ * 
+ * @return
+ */
 int UI::show_info_menu() {
 
     Menu functionalities(
         {"0. Go back to Main Menu"
         },
-        "- Good interactive menu\n- Brute force approach\n- Dynamic programming approach\n"
+        "- Good interactive menu\n"
+                  "- Brute Force approach\n"
+                  "- Dynamic Programming approach\n"
+                  "- Greedy approach"
     );
 
     return functionalities.run();
 }
 
+/**
+ *
+ * @return
+ */
 int UI::show_dataset_menu() {
 
     Menu dataset(
@@ -62,6 +79,10 @@ int UI::show_dataset_menu() {
     return dataset.run();
 }
 
+/**
+ *
+ * @return
+ */
 int UI::show_algorithm_menu() {
 
     Menu algorithms (
@@ -77,6 +98,12 @@ int UI::show_algorithm_menu() {
     return algorithms.run();
 }
 
+/**
+ *
+ * @param result
+ * @param total_duration
+ * @return
+ */
 int UI::show_results_menu(std::vector<Pallet> result, const std::chrono::microseconds &total_duration) {
 
     std::string content;
@@ -97,6 +124,10 @@ int UI::show_results_menu(std::vector<Pallet> result, const std::chrono::microse
     return results.run();
 }
 
+/**
+ *
+ * @return
+ */
 int UI::show_performance_data() {
 
     std::string content = "Data loaded in the csv";

@@ -47,9 +47,9 @@ public:
     int run();
 
 private:
-    std::string content;
-    std::string selection;
-    std::vector<std::string> options;
+    std::string content;    // content to be displayed
+    std::string selection;      // selected algorithm and dataset
+    std::vector<std::string> options;   // menu options
     int current_option;
 
     bool is_selected(const int& i);
