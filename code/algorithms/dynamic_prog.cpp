@@ -2,7 +2,7 @@
 // Created by sebas on 16/05/2025.
 //
 
-#include "brute_force.h"
+#include "dynamic_prog.h"
 #include <vector>
 #include <algorithm>
 
@@ -36,10 +36,9 @@ std::vector<Pallet> dp_packing(const Truck& truck) {
         }
     }
 
-    // Reconstruct selected pallets
+    // Reconstroi paletes selecionadas
     std::vector<Pallet> best_subset;
-    int best_weight = std::max_element(dp_array.begin(), dp_array.end()) - dp_array.begin();
-    for (int idx : selected_pallets[best_weight]) {
+    for (int idx : selected_pallets[selected_pallets.size() - 1]) {
         best_subset.push_back(available_pallets[idx]);
     }
 

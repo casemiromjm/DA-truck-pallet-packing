@@ -138,9 +138,8 @@ void App::run() {
                     result = run_brute_force();
                 }
 
-                if (chosen_algorithm == Algorithm::DYNAMIC) {
-                    result = run_dp()
-                    ;
+                else if (chosen_algorithm == Algorithm::DYNAMIC) {
+                    result = run_dp();
                 }
 
                 int choice = UI::show_results_menu(result);

@@ -34,7 +34,7 @@ int UI::show_info_menu() {
     Menu functionalities(
         {"0. Go back to Main Menu"
         },
-        "- Good interactive menu\n"
+        "- Good interactive menu\n- Brute force approach\n- Dynamic programming approach\n"
     );
 
     return functionalities.run();
