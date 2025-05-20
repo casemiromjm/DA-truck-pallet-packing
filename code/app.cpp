@@ -1,8 +1,8 @@
 #include "app.h"
 
-#include "csv.h"
-#include "truck.h"
-#include "ui_flow.h"
+#include "utils/csv.h"
+#include "data_structures/truck.h"
+#include "menu/ui_flow.h"
 
 #include "algorithms/brute_force.h"
 #include "algorithms/dynamic_prog.h"

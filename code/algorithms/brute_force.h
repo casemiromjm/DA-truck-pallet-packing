@@ -7,7 +7,7 @@
 
 #include <vector>
 #include "../truck.h"
-#include "../pallet.h"
+#include "../data_structures/pallet.h"
 
 
 std::vector<Pallet> brute_force_packing(const Truck& truck, std::chrono::microseconds* total_duration);

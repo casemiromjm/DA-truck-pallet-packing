@@ -1,5 +1,5 @@
 #include "ui_flow.h"
-#include "app.h"
+#include "../app.h"
 #include "menu.h"
 
 // technically it is part of the class App, but for simplification’s sake, it is on another file

@@ -3,10 +3,10 @@
 
 #include <string>
 #include <vector>
-
-#include "state.h"
-#include "truck.h"
 #include <chrono>
+
+#include "menu/state.h"
+#include "data_structures/truck.h"
 
 class App {
 public:
@@ -76,8 +76,6 @@ private:
     Dataset chosen_dataset = Dataset::NONE;
 
     Truck truck;
-
-    std::chrono::microseconds total_duration {0};
 
     std::string convert_num_str(int num);  // auxiliary function
 

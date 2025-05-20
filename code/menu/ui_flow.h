@@ -1,7 +1,7 @@
 #ifndef UI_FLOW_H
 #define UI_FLOW_H
 
-#include "app.h"
+#include "../app.h"
 #include "state.h"
 
 namespace UI {
