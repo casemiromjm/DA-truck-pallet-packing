@@ -6,6 +6,7 @@
 
 #include "state.h"
 #include "truck.h"
+#include <chrono>
 
 class App {
 public:
@@ -76,10 +77,12 @@ private:
 
     Truck truck;
 
+    std::chrono::microseconds total_duration {0};
+
     std::string convert_num_str(int num);  // auxiliary function
 
-    std::vector<Pallet> run_brute_force() const;
-    std::vector<Pallet> run_dp() const;
+    std::vector<Pallet> run_brute_force();
+    std::vector<Pallet> run_dp();
 };
 
 #endif

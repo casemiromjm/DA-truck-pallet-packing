@@ -4,9 +4,12 @@
 
 #include "dynamic_prog.h"
 #include <vector>
-#include <algorithm>
+#include <chrono>
 
-std::vector<Pallet> dp_packing(const Truck& truck) {
+std::vector<Pallet> dp_packing(const Truck& truck, std::chrono::microseconds* total_duration) {
+
+    auto start_time = std::chrono::high_resolution_clock::now();
+
     std::vector<Pallet> available_pallets = truck.get_available_pallets();
     int n = available_pallets.size();
     int truck_capacity = truck.get_capacity();
@@ -41,6 +44,9 @@ std::vector<Pallet> dp_packing(const Truck& truck) {
     for (int idx : selected_pallets[selected_pallets.size() - 1]) {
         best_subset.push_back(available_pallets[idx]);
     }
+
+    auto end_time = std::chrono::high_resolution_clock::now();
+    *total_duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
 
     return best_subset;
 }

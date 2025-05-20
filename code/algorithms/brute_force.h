@@ -10,7 +10,7 @@
 #include "../pallet.h"
 
 
-std::vector<Pallet> brute_force_packing(const Truck& truck);
+std::vector<Pallet> brute_force_packing(const Truck& truck, std::chrono::microseconds* total_duration);
 
 std::vector<Pallet> backtracking_pallet_packing(Truck& truck);
 
