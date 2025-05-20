@@ -9,6 +9,10 @@
 
 // Função auxiliar de comparar rácios valor/peso das paletes
 bool compare_ratio(const Pallet& a, const Pallet& b) {
+    if(a.get_weight_value_ratio() == b.get_weight_value_ratio()){
+      return a.get_weight() > b.get_weight();
+    }
+
     return a.get_weight_value_ratio() > b.get_weight_value_ratio();
 }
 
