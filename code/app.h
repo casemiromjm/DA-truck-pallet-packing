@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <chrono>
 
 #include "menu/state.h"
 #include "data_structures/truck.h"
@@ -78,8 +79,8 @@ private:
 
     std::string convert_num_str(int num);  // auxiliary function
 
-    std::vector<Pallet> run_brute_force() const;
-    std::vector<Pallet> run_dp() const;
+    std::vector<Pallet> run_brute_force();
+    std::vector<Pallet> run_dp();
 };
 
 #endif

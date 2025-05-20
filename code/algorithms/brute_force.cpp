@@ -6,7 +6,9 @@
 #include <algorithm>
 
 //brute force
-std::vector<Pallet> brute_force_packing(const Truck& truck) {
+std::vector<Pallet> brute_force_packing(const Truck& truck, std::chrono::microseconds* total_duration) {
+
+    auto start_time = std::chrono::high_resolution_clock::now();
 
     std::vector<Pallet> available_pallets = truck.get_available_pallets();
     int truck_capacity = truck.get_capacity();
@@ -52,6 +54,9 @@ std::vector<Pallet> brute_force_packing(const Truck& truck) {
             best_subset = subset;
         }
     }
+
+    auto end_time = std::chrono::high_resolution_clock::now();
+    *total_duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
 
     return best_subset;
 }
