@@ -4,8 +4,8 @@
 #include <string>
 #include <vector>
 
-#include "state.h"
-#include "truck.h"
+#include "utils/state.h"
+#include "data_structures/truck.h"
 
 class App {
 public:

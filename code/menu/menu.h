@@ -5,7 +5,7 @@
 #include <vector>
 #include <iostream>
 
-#include "state.h"
+#include "../utils/state.h"
 
 #ifdef _WIN32       // assim o sebastiao consegue rodar tb
     #include <conio.h>

@@ -7,7 +7,7 @@
 
 #include <vector>
 #include "../truck.h"
-#include "../pallet.h"
+#include "../data_structures/pallet.h"
 
 std::vector<Pallet> dp_packing(const Truck& truck);
 

@@ -1,8 +1,8 @@
 #ifndef UI_FLOW_H
 #define UI_FLOW_H
 
-#include "app.h"
-#include "state.h"
+#include "../app.h"
+#include "../utils/state.h"
 
 namespace UI {
     int show_main_menu(const App& app);
