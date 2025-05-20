@@ -1,11 +1,8 @@
-//
-// Created by Rafael dos Santos Rodrigues on 12/05/2025.
-//
-
 #ifndef BRUTE_FORCE_H
 #define BRUTE_FORCE_H
 
 #include <vector>
+#include <chrono>
 #include "../data_structures/truck.h"
 #include "../data_structures/pallet.h"
 

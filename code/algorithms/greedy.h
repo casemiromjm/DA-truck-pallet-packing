@@ -1,7 +1,3 @@
-//
-// Created by sebas on 20/05/2025.
-//
-
 #ifndef GREEDY_H
 #define GREEDY_H
 
