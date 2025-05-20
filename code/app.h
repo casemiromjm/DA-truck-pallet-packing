@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-#include "utils/state.h"
+#include "menu/state.h"
 #include "data_structures/truck.h"
 
 class App {

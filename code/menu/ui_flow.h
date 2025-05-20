@@ -2,7 +2,7 @@
 #define UI_FLOW_H
 
 #include "../app.h"
-#include "../utils/state.h"
+#include "state.h"
 
 namespace UI {
     int show_main_menu(const App& app);

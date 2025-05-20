@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(code main.cpp
         menu/menu.cpp
-        utils/state.cpp
+        menu/state.cpp
         menu/ui_flow.cpp
         utils/csv.cpp
         data_structures/truck.cpp
