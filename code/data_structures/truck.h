@@ -17,8 +17,8 @@ public:
     void add_available_pallet(const Pallet& pallet);
 
 private:
-    double capacity;
-    double num_pallets;
+    int capacity;
+    int num_pallets;
     std::vector<Pallet> available_pallets;        // n é definitivo (vector), pq n sei como seriam os algoritmos
 };
 

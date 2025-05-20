@@ -6,8 +6,8 @@
 #define GREEDY_H
 
 #include <vector>
-#include "../truck.h"
-#include "../pallet.h"
+#include "../data_structures/truck.h"
+#include "../data_structures/pallet.h"
 
 std::vector<Pallet> greedy_packing(const Truck& truck);
 
