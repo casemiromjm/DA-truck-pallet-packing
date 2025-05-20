@@ -79,6 +79,8 @@ private:
 
     std::string convert_num_str(int num);  // auxiliary function
 
+    std::chrono::microseconds total_duration{0};
+
     std::vector<Pallet> run_brute_force();
     std::vector<Pallet> run_dp();
 };

@@ -6,7 +6,7 @@
 #define BRUTE_FORCE_H
 
 #include <vector>
-#include "../truck.h"
+#include "../data_structures/truck.h"
 #include "../data_structures/pallet.h"
 
 
