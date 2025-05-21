@@ -1,9 +1,5 @@
-//
-// Created by Rafael dos Santos Rodrigues on 20/05/2025.
-//
-
-#ifndef GRAPH_CONSTRUCT_H
-#define GRAPH_CONSTRUCT_H
+#ifndef PERFORMANCE_DATA_H
+#define PERFORMANCE_DATA_H
 
 #include <iostream>
 #include <fstream>
@@ -15,7 +11,9 @@
 #include "../utils/csv.h"
 #include "../app.h"
 
-Truck load_truck_from_dataset(int dataset_number);
-void construct_data_csv(int num_datasets = 4, int num_runs = 10);
+#define SOL_CALLS 10
+
+Truck load_truck_from_dataset(int dataset_number);      // é a funcao readme
+void generate_performance_csv(int num_datasets = 4, int num_runs = SOL_CALLS);
 
 #endif //PERFORMANCE_DATA_H

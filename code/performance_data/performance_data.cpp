@@ -1,14 +1,21 @@
-//
-// Created by Rafael dos Santos Rodrigues on 20/05/2025.
-//
-
 #include "performance_data.h"
+
 #include "../algorithms/brute_force.h"
 #include "../algorithms/dynamic_prog.h"
 #include "../data_structures/truck.h"
 #include "../app.h"
 
 
+/*
+ * poderia pegar a instancia principal do App (receber via parametro) p/ usar a funcao read_dataset
+ * e usar as escolhas de algoritmo e de dataset.
+ * aq nessa parte so teria a responsabilidade de gerar o .csv e salvá-lo.
+ * teria um "magic number" (pode ser uma global variable) p definir o número de vezes q certo dataset
+ * vai rodar p gerar dados mais confiáveis.
+ *
+ * outra solucao seria, considerando q ja temos um error-handling mais robusto, poderíamos
+ * automaticamente rodar todos os algoritmos em todos os datasets e ja gerar todos os .csv necessários
+ */
 
 Truck load_truck_from_dataset(int dataset_number) {
     Csv file;
@@ -27,7 +34,7 @@ Truck load_truck_from_dataset(int dataset_number) {
     return t;
 }
 
-void construct_data_csv(int num_datasets, int num_runs) {
+void generate_performance_csv(int num_datasets, int num_runs) {
     std::ofstream csv_out("../performance_data/data.csv");
 
     csv_out << "Dataset, TimeMicroseconds, NumberPallets\n";
