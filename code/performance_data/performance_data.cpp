@@ -32,7 +32,7 @@ void generate_performance_csv(App& app) {
                 break;
         }
         std::ofstream csv_out (out_file);
-        csv_out << "Dataset, TimeMicroseconds, NumberPallets\n";
+        csv_out << "Dataset,TimeMicroseconds,NumberPallets\n";
 
         // loop through all (example) datasets
         for (int d = 1; d <= 10; d++) {
