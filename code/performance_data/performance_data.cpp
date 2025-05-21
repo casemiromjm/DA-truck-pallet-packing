@@ -8,6 +8,9 @@
 #include <fstream>
 #include <chrono>
 
+static const int SOLUTION_CALLS = 10;
+static const std::string OUTPUT_PATH = "../../performance_analysis/data/";
+
 void generate_performance_csv(App& app) {
 
     // loop through all (implemented) algorithms
@@ -19,17 +22,17 @@ void generate_performance_csv(App& app) {
         std::string out_file;
         switch ((App::Algorithm)alg) {
             case App::Algorithm::BRUTE_FORCE:
-                out_file = "../performance_data/bruteforce_report.csv";
+                out_file = OUTPUT_PATH + "bruteforce_report.csv";
                 break;
             case App::Algorithm::DYNAMIC:
-                out_file = "../performance_data/dynamicprog_report.csv";
+                out_file = OUTPUT_PATH + "dynamicprog_report.csv";
                 break;
             case App::Algorithm::GREEDY:
-                out_file = "../performance_data/greedy_report.csv";
+                out_file = OUTPUT_PATH + "greedy_report.csv";
                 break;
         }
         std::ofstream csv_out (out_file);
-        csv_out << "Dataset, TimeMicroseconds, NumberPallets\n";
+        csv_out << "Dataset,TimeMicroseconds,NumberPallets\n";
 
         // loop through all (example) datasets
         for (int d = 1; d <= 10; d++) {
