@@ -10,7 +10,6 @@
 
 class App {
 public:
-
     enum class Algorithm {
         NONE,
         BRUTE_FORCE,
@@ -83,6 +82,7 @@ private:
 
     std::vector<Pallet> run_brute_force();
     std::vector<Pallet> run_dp();
+    std::vector<Pallet> run_greedy();
 };
 
 #endif

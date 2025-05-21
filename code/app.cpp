@@ -6,6 +6,7 @@
 
 #include "algorithms/brute_force.h"
 #include "algorithms/dynamic_prog.h"
+#include "algorithms/greedy.h"
 
 #include "performance_data/performance_data.h"
 
@@ -89,6 +90,10 @@ std::vector<Pallet> App::run_dp() {
     return dp_packing(truck, &total_duration);
 }
 
+std::vector<Pallet> App::run_greedy() {
+    return greedy_packing(truck);
+}
+
 void App::run() {
     while (true) {
         switch (app_state.get_curr_state()) {
@@ -144,6 +149,11 @@ void App::run() {
                 else if (chosen_algorithm == Algorithm::DYNAMIC) {
 
                     result = run_dp();
+                }
+
+                else if (chosen_algorithm == Algorithm::GREEDY) {
+
+                    result = run_greedy();
                 }
 
                 int choice = UI::show_results_menu(result, total_duration);
