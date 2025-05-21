@@ -47,6 +47,8 @@ public:
 
     void run();
 
+    static std::string convert_num_str(int num);  // auxiliary function
+
 private:
     State app_state;
     std::vector<std::string> algorithm_names = {
@@ -75,8 +77,6 @@ private:
     Dataset chosen_dataset = Dataset::NONE;
 
     Truck truck;
-
-    std::string convert_num_str(int num);  // auxiliary function
 
     std::chrono::microseconds total_duration{0};
 
