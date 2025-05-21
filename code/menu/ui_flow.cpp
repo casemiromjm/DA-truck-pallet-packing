@@ -115,7 +115,7 @@ int UI::show_results_menu(std::vector<Pallet> result, const std::chrono::microse
         content += std::to_string(result[i].get_id()) + ", "  + std::to_string(result[i].get_weight()) + ", " + std::to_string(result[i].get_value()) + '\n';
     }
 
-    content += '\n' + final_duration + " µs";
+    content += '\n' + final_duration + " \u00B5s";
 
     Menu results(
         {

@@ -14,6 +14,7 @@ bool compare_ratio(const Pallet& a, const Pallet& b) {
 }
 
 std::vector<Pallet> greedy_packing(const Truck& truck, std::chrono::microseconds& total_duration) {
+
     auto start_time = std::chrono::high_resolution_clock::now();
 
     std::vector<Pallet> available_pallets = truck.get_available_pallets();
@@ -21,8 +22,6 @@ std::vector<Pallet> greedy_packing(const Truck& truck, std::chrono::microseconds
 
     double remaining_capacity = truck.get_capacity();
     int max_pallets = truck.get_num_pallets();
-
-    auto start_time = std::chrono::high_resolution_clock::now();
 
     // Calcular ratios
     for (Pallet& pallet : available_pallets) {
