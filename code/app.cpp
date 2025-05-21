@@ -91,7 +91,7 @@ std::vector<Pallet> App::run_dp() {
 }
 
 std::vector<Pallet> App::run_greedy() {
-    return greedy_packing(truck);
+    return greedy_packing(truck, &total_duration);
 }
 
 void App::run() {
