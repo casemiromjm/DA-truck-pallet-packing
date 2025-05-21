@@ -155,7 +155,7 @@ void App::run() {
             }
 
             case State::StateID::DATA_CONSTRUCT: {
-                construct_data_csv();
+                generate_performance_csv();
 
                 int choice = UI::show_performance_data();
 
