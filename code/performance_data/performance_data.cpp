@@ -2,60 +2,68 @@
 
 #include "../algorithms/brute_force.h"
 #include "../algorithms/dynamic_prog.h"
+#include "../algorithms/greedy.h"
 #include "../data_structures/truck.h"
 #include "../app.h"
+#include <fstream>
+#include <chrono>
 
+void generate_performance_csv(App& app) {
 
-/*
- * poderia pegar a instancia principal do App (receber via parametro) p/ usar a funcao read_dataset
- * e usar as escolhas de algoritmo e de dataset.
- * aq nessa parte so teria a responsabilidade de gerar o .csv e salvá-lo.
- * teria um "magic number" (pode ser uma global variable) p definir o número de vezes q certo dataset
- * vai rodar p gerar dados mais confiáveis.
- *
- * outra solucao seria, considerando q ja temos um error-handling mais robusto, poderíamos
- * automaticamente rodar todos os algoritmos em todos os datasets e ja gerar todos os .csv necessários
- */
+    // loop through all (implemented) algorithms
+    for (int alg = 1; alg <= 3; alg++) {
 
-Truck load_truck_from_dataset(int dataset_number) {
-    Csv file;
+        app.set_algorithm((App::Algorithm)alg);
 
-    std::string dataset_num = App::convert_num_str(dataset_number);
+        // prepare file
+        std::string out_file;
+        switch ((App::Algorithm)alg) {
+            case App::Algorithm::BRUTE_FORCE:
+                out_file = "../performance_data/bruteforce_report.csv";
+                break;
+            case App::Algorithm::DYNAMIC:
+                out_file = "../performance_data/dynamicprog_report.csv";
+                break;
+            case App::Algorithm::GREEDY:
+                out_file = "../performance_data/greedy_report.csv";
+                break;
+        }
+        std::ofstream csv_out (out_file);
+        csv_out << "Dataset, TimeMicroseconds, NumberPallets\n";
 
-    file.readCSV("../data/datasets/TruckAndPallets_" + dataset_num + ".csv");
-    Truck t(std::stod(file.getData()[0][0]), std::stod(file.getData()[0][1]));
+        // loop through all (example) datasets
+        for (int d = 1; d <= 10; d++) {
 
-    file.readCSV("../data/datasets/Pallets_" + dataset_num + ".csv");
-    for (auto& pallet : file.getData()) {
-        Pallet p(std::stoi(pallet[0]), std::stod(pallet[1]), std::stod(pallet[2]));
-        t.add_available_pallet(p);
-    }
+            app.set_dataset((App::Dataset)d);
+            app.read_dataset();
+            auto truck = app.get_truck();
 
-    return t;
-}
+            std::chrono::microseconds helper_duration{0};
+            std::chrono::microseconds total_duration{0};
 
-void generate_performance_csv(int num_datasets, int num_runs) {
-    std::ofstream csv_out("../performance_data/data.csv");
+            int valid_runs = SOLUTION_CALLS;        // valid_runs precisa ser atualizada a medida q alguma run n é válida
+            for (int i = 0; i < SOLUTION_CALLS; i++) {
 
-    csv_out << "Dataset, TimeMicroseconds, NumberPallets\n";
+                switch ((App::Algorithm)alg) {
+                    case App::Algorithm::BRUTE_FORCE:
+                        brute_force_packing(truck, helper_duration);
+                        break;
+                    case App::Algorithm::DYNAMIC:
+                        dp_packing(truck, helper_duration);
+                        break;
+                    case App::Algorithm::GREEDY:
+                        greedy_packing(truck, helper_duration);
+                        break;
+                }
 
-    for (int d = 1; d <= num_datasets; ++d) {
-        Truck truck = load_truck_from_dataset(d);
+                total_duration += helper_duration;
+            }
 
-        std::chrono::microseconds helper_duration{0};
-        std::chrono::microseconds total_duration{0};
+            auto avg_time = total_duration.count() / valid_runs;
 
-        for (int i = 0; i < num_runs; ++i) {
-
-            dp_packing(truck, &helper_duration);
-
-            total_duration += helper_duration;
+            csv_out << "Dataset" << d << "," << avg_time << "," << truck.get_num_pallets() << "\n";
         }
 
-        auto avg_time = total_duration.count() / num_runs;
-
-        csv_out << "Dataset" << d << "," << avg_time << "," << truck.get_num_pallets() << "\n";
+        csv_out.close();
     }
-
-    csv_out.close();
 }

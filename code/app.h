@@ -43,6 +43,8 @@ public:
     std::string get_dataset_name() const;
     void set_dataset(Dataset data);
 
+    Truck get_truck() const;
+
     void read_dataset();
 
     void run();

@@ -12,7 +12,6 @@
 
 App::App(): truck(0,0) {}
 
-
 State::StateID App::get_app_state() const {
     return app_state.get_curr_state();
 }
@@ -42,6 +41,11 @@ void App::set_algorithm(Algorithm alg) {
 void App::set_dataset(Dataset data) {
     chosen_dataset = data;
 }
+
+Truck App::get_truck() const {
+    return truck;
+}
+
 
 void App::read_dataset() {
     Csv file;
@@ -83,15 +87,15 @@ std::string App::convert_num_str(int num) {
 }
 
 std::vector<Pallet> App::run_brute_force() {
-    return brute_force_packing(truck, &total_duration);
+    return brute_force_packing(truck, total_duration);
 }
 
 std::vector<Pallet> App::run_dp() {
-    return dp_packing(truck, &total_duration);
+    return dp_packing(truck, total_duration);
 }
 
 std::vector<Pallet> App::run_greedy() {
-    return greedy_packing(truck);
+    return greedy_packing(truck, total_duration);
 }
 
 void App::run() {
@@ -165,7 +169,7 @@ void App::run() {
             }
 
             case State::StateID::DATA_CONSTRUCT: {
-                generate_performance_csv();
+                generate_performance_csv(*this);
 
                 int choice = UI::show_performance_data();
 
