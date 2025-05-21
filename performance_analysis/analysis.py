@@ -1,17 +1,16 @@
 import matplotlib.pyplot as plt
-import utils
 
 # brute force data
-with open("brute_force.csv", "r"):
+with open("/data/bruteforce_report.csv", "r"):
     #TODO
     pass
 
 # dynamic programming data
-with open("dynamic_programming.csv", "r"):
+with open("/data/dynamicprog_report.csv", "r"):
     #TODO
     pass
 
 # greedy data
-with open("greedy.csv", "r"):
+with open("/data/greedy_report.csv", "r"):
     #TODO
     pass
