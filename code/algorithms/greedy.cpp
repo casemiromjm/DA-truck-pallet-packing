@@ -1,5 +1,6 @@
 #include <vector>
 #include <algorithm>
+#include <chrono>
 #include "greedy.h"
 
 
@@ -20,6 +21,8 @@ std::vector<Pallet> greedy_packing(const Truck& truck, std::chrono::microseconds
 
     double remaining_capacity = truck.get_capacity();
     int max_pallets = truck.get_num_pallets();
+
+    auto start_time = std::chrono::high_resolution_clock::now();
 
     // Calcular ratios
     for (Pallet& pallet : available_pallets) {
