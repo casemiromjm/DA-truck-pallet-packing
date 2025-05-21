@@ -1,7 +1,3 @@
-//
-// Created by sebas on 20/05/2025.
-//
-
 #include <vector>
 #include <algorithm>
 #include <chrono>
@@ -17,7 +13,9 @@ bool compare_ratio(const Pallet& a, const Pallet& b) {
     return a.get_weight_value_ratio() > b.get_weight_value_ratio();
 }
 
-std::vector<Pallet> greedy_packing(const Truck& truck, std::chrono::microseconds* total_duration) {
+std::vector<Pallet> greedy_packing(const Truck& truck, std::chrono::microseconds& total_duration) {
+    auto start_time = std::chrono::high_resolution_clock::now();
+
     std::vector<Pallet> available_pallets = truck.get_available_pallets();
     std::vector<Pallet> best_subset;
 
@@ -43,8 +41,7 @@ std::vector<Pallet> greedy_packing(const Truck& truck, std::chrono::microseconds
     }
 
     auto end_time = std::chrono::high_resolution_clock::now();
-    *total_duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
+    total_duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
 
     return best_subset;
 }
-

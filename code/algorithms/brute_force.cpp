@@ -1,12 +1,8 @@
-//
-// Created by Rafael dos Santos Rodrigues on 12/05/2025.
-//
-
 #include "brute_force.h"
 #include <algorithm>
 
 //brute force
-std::vector<Pallet> brute_force_packing(const Truck& truck, std::chrono::microseconds* total_duration) {
+std::vector<Pallet> brute_force_packing(const Truck& truck, std::chrono::microseconds& total_duration) {
 
     auto start_time = std::chrono::high_resolution_clock::now();
 
@@ -56,7 +52,7 @@ std::vector<Pallet> brute_force_packing(const Truck& truck, std::chrono::microse
     }
 
     auto end_time = std::chrono::high_resolution_clock::now();
-    *total_duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
+    total_duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
 
     return best_subset;
 }
