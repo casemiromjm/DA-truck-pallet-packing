@@ -2,7 +2,7 @@
 #include <vector>
 #include <chrono>
 
-std::vector<Pallet> dp_packing(const Truck& truck, std::chrono::microseconds& total_duration) {
+ReturnResult dp_packing(const Truck& truck, std::chrono::microseconds& total_duration) {
 
     auto start_time = std::chrono::high_resolution_clock::now();
 
@@ -36,15 +36,19 @@ std::vector<Pallet> dp_packing(const Truck& truck, std::chrono::microseconds& to
     }
 
     // Reconstroi paletes selecionadas
-    std::vector<Pallet> best_subset;
+    ReturnResult result;
+    result.total_value = dp_array[truck_capacity];
+    result.total_weight = 0.0;
+
     for (int idx : selected_pallets[selected_pallets.size() - 1]) {
-        best_subset.push_back(available_pallets[idx]);
+        result.pallets.push_back(available_pallets[idx]);
+        result.total_weight += available_pallets[idx].get_weight();
     }
 
     auto end_time = std::chrono::high_resolution_clock::now();
     total_duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
 
-    return best_subset;
+    return result;
 }
 
 

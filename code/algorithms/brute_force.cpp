@@ -2,7 +2,7 @@
 #include <algorithm>
 
 //brute force
-std::vector<Pallet> brute_force_packing(const Truck& truck, std::chrono::microseconds& total_duration) {
+ReturnResult brute_force_packing(const Truck& truck, std::chrono::microseconds& total_duration) {
 
     auto start_time = std::chrono::high_resolution_clock::now();
 
@@ -12,8 +12,9 @@ std::vector<Pallet> brute_force_packing(const Truck& truck, std::chrono::microse
     int n = available_pallets.size();
     int bit_mask;
 
-    std::vector<Pallet> best_subset;
-    double max_value = 0.0;
+    ReturnResult best_result;
+    best_result.total_value = 0.0;
+    best_result.total_weight = 0.0;
 
     //o numero maximo de combinações de paletes possivel de fazer é 2^n (sendo n o numero de paletes disponiveis)
     int all_combinations = 1 << n;
@@ -44,18 +45,78 @@ std::vector<Pallet> brute_force_packing(const Truck& truck, std::chrono::microse
 
         //antes de atualizar como "melhor escolha" temos de ver se o peso é suportado, se o numero de paletes do subset
         //é menor que o numero maximo de paletes suportado e se o valor atual é melhor que o maior valor até agora
-        if ((current_weight <= truck_capacity) && (current_value > max_value)) {
+        if ((current_weight <= truck_capacity) && (current_value > best_result.total_value)) {
 
-            max_value = current_value;
-            best_subset = subset;
+            best_result.pallets = subset;
+            best_result.total_value = current_value;
+            best_result.total_weight = current_weight;
         }
     }
 
     auto end_time = std::chrono::high_resolution_clock::now();
     total_duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
 
-    return best_subset;
+    return best_result;
 }
 
 
 //backtracking
+void backtrack(const std::vector<Pallet>& pallets, int index, double current_weight, double current_value, int max_capacity,
+    std::vector<Pallet>& current_solution,  ReturnResult& best_result) {
+
+    //caso base, ou seja, já percorreu todas as paletes
+    if (index == pallets.size()) {
+
+        //verificar se a solução atual é melhor
+        if (current_weight <= max_capacity && current_value >  best_result.total_value) {
+
+            //se sim, atualizar os valores
+            best_result.pallets = current_solution;
+            best_result.total_weight = current_weight;
+            best_result.total_value = current_value;
+        }
+        return;
+    }
+
+    //logica do backtracking, primeiro tentar incluir a palete atual se ele respeitar as capacidades max
+    if (current_weight + pallets[index].get_weight() <= max_capacity) {
+
+        //incluir a solução atual
+        current_solution.push_back(pallets[index]);
+
+        //chamar o backtracking atualizando o index da palete (+1 porque adicionamos 1), o peso atual (somar o da palete colocada) e o valor atual com a mesma logica
+        backtrack(pallets, index + 1, current_weight + pallets[index].get_weight(), current_value + pallets[index].get_value(),
+                  max_capacity, current_solution, best_result);
+
+        //no fim remover a palete
+        current_solution.pop_back();
+    }
+
+    //agora tentar sem incluir a palete para ver qual o melhor (neste caso so muda o index porque "saltamos" a palete
+    backtrack(pallets, index + 1, current_weight, current_value, max_capacity, current_solution, best_result);
+}
+
+//função principal
+ReturnResult brute_force_backtracking(const Truck& truck, std::chrono::microseconds& total_duration) {
+
+    auto start_time = std::chrono::high_resolution_clock::now();
+
+    const auto& pallets = truck.get_available_pallets();
+    int capacity = truck.get_capacity();
+
+    ReturnResult best_result;
+    std::vector<Pallet> current_solution;
+
+    best_result.pallets = current_solution;
+    best_result.total_value = 0.0;
+    best_result.total_weight = 0.0;
+
+
+    backtrack(pallets, 0, 0.0, 0.0, capacity, current_solution, best_result);
+
+    auto end_time = std::chrono::high_resolution_clock::now();
+    total_duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
+
+
+    return best_result;
+}

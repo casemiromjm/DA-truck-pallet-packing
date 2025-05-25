@@ -14,7 +14,7 @@ static const std::string OUTPUT_PATH = "../../performance_analysis/data/";
 void generate_performance_csv(App& app) {
 
     // loop through all (implemented) algorithms
-    for (int alg = 1; alg <= 3; alg++) {
+    for (int alg = 1; alg <= 4; alg++) {
 
         app.set_algorithm((App::Algorithm)alg);
 
@@ -24,9 +24,15 @@ void generate_performance_csv(App& app) {
             case App::Algorithm::BRUTE_FORCE:
                 out_file = OUTPUT_PATH + "bruteforce_report.csv";
                 break;
+
+            case App::Algorithm::BRUTE_FORCE_BACKTRACKING:
+                out_file = OUTPUT_PATH + "bruteforce_backtracking_report.csv";
+                break;
+
             case App::Algorithm::DYNAMIC:
                 out_file = OUTPUT_PATH + "dynamicprog_report.csv";
                 break;
+
             case App::Algorithm::GREEDY:
                 out_file = OUTPUT_PATH + "greedy_report.csv";
                 break;
@@ -51,9 +57,15 @@ void generate_performance_csv(App& app) {
                     case App::Algorithm::BRUTE_FORCE:
                         brute_force_packing(truck, helper_duration);
                         break;
+
+                    case App::Algorithm::BRUTE_FORCE_BACKTRACKING:
+                        brute_force_backtracking(truck, helper_duration);
+                        break;
+
                     case App::Algorithm::DYNAMIC:
                         dp_packing(truck, helper_duration);
                         break;
+
                     case App::Algorithm::GREEDY:
                         greedy_packing(truck, helper_duration);
                         break;

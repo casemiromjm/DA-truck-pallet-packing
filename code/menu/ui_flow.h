@@ -10,7 +10,7 @@ namespace UI {
     int show_dataset_menu();
     int show_algorithm_menu();
     int show_performance_data();
-    int show_results_menu(std::vector<Pallet> result, const std::chrono::microseconds &total_duration);
+    int show_results_menu(ReturnResult result, const std::chrono::microseconds &total_duration);
 }
 
 #endif

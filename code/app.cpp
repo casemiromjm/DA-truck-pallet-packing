@@ -86,16 +86,20 @@ std::string App::convert_num_str(int num) {
     return "0"+std::to_string(num);
 }
 
-std::vector<Pallet> App::run_brute_force() {
+ReturnResult App::run_brute_force() {
     return brute_force_packing(truck, total_duration);
 }
 
-std::vector<Pallet> App::run_dp() {
+ReturnResult App::run_dp() {
     return dp_packing(truck, total_duration);
 }
 
-std::vector<Pallet> App::run_greedy() {
+ReturnResult App::run_greedy() {
     return greedy_packing(truck, total_duration);
+}
+
+ReturnResult App::run_brute_force_backtracking() {
+    return brute_force_backtracking(truck, total_duration);
 }
 
 void App::run() {
@@ -144,10 +148,14 @@ void App::run() {
             }
 
             case State::StateID::RESULTS: {
-                std::vector<Pallet> result;
+                ReturnResult result;
 
                 if (chosen_algorithm == Algorithm::BRUTE_FORCE) {
                     result = run_brute_force();
+                }
+
+                else if (chosen_algorithm == Algorithm::BRUTE_FORCE_BACKTRACKING) {
+                    result = run_brute_force_backtracking();
                 }
 
                 else if (chosen_algorithm == Algorithm::DYNAMIC) {

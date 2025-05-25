@@ -13,7 +13,7 @@ bool compare_ratio(const Pallet& a, const Pallet& b) {
     return a.get_weight_value_ratio() > b.get_weight_value_ratio();
 }
 
-std::vector<Pallet> greedy_packing(const Truck& truck, std::chrono::microseconds& total_duration) {
+ReturnResult greedy_packing(const Truck& truck, std::chrono::microseconds& total_duration) {
 
     auto start_time = std::chrono::high_resolution_clock::now();
 
@@ -31,16 +31,26 @@ std::vector<Pallet> greedy_packing(const Truck& truck, std::chrono::microseconds
     // Sorting com a booleana de comparar rácios
     std::sort(available_pallets.begin(), available_pallets.end(), compare_ratio);
 
+    double total_weight = 0.0;
+    double total_value = 0.0;
+
     // Escolher de forma "gulosa" as paletes até não caberem mais
     for (const Pallet& pallet : available_pallets) {
         if (pallet.get_weight() <= remaining_capacity && best_subset.size() < max_pallets) {
             best_subset.push_back(pallet);
             remaining_capacity -= pallet.get_weight();
+            total_weight += pallet.get_weight();
+            total_value += pallet.get_value();
         }
     }
+
+    ReturnResult result;
+    result.pallets = best_subset;
+    result.total_weight = total_weight;
+    result.total_value = total_value;
 
     auto end_time = std::chrono::high_resolution_clock::now();
     total_duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
 
-    return best_subset;
+    return result;
 }
