@@ -1,6 +1,36 @@
 #include "brute_force.h"
 #include <algorithm>
 
+
+//to compare the solutions
+bool is_better_solution(const std::vector<Pallet>& new_solution, double new_value,
+                        const std::vector<Pallet>& current_best, double current_value) {
+
+    if (new_value > current_value) {
+        return true;
+    }
+
+    if (new_value < current_value) {
+        return false;
+    }
+
+    //minor number of palltes
+    if (new_solution.size() < current_best.size()) {
+        return true;
+    }
+    if (new_solution.size() > current_best.size()) {
+        return false;
+    }
+
+    //ids
+    for (size_t i = 0; i < new_solution.size(); ++i) {
+        if (new_solution[i].get_id() < current_best[i].get_id()) return true;
+        if (new_solution[i].get_id() > current_best[i].get_id()) return false;
+    }
+
+    return false;
+}
+
 static const auto TIME_LIMIT = std::chrono::microseconds(90000000);
 
 //brute force
@@ -54,7 +84,7 @@ ReturnResult brute_force_packing(const Truck& truck, std::chrono::microseconds& 
 
         //antes de atualizar como "melhor escolha" temos de ver se o peso é suportado, se o numero de paletes do subset
         //é menor que o numero maximo de paletes suportado e se o valor atual é melhor que o maior valor até agora
-        if ((current_weight <= truck_capacity) && (current_value > best_result.total_value)) {
+        if (current_weight <= truck_capacity && is_better_solution(subset, current_value, best_result.pallets, best_result.total_value)) {
 
             best_result.pallets = subset;
             best_result.total_value = current_value;
@@ -82,7 +112,7 @@ void backtrack(const std::vector<Pallet>& pallets, int index, double current_wei
     if (index == pallets.size()) {
 
         //verificar se a solução atual é melhor
-        if (current_weight <= max_capacity && current_value >  best_result.total_value) {
+        if (current_weight <= max_capacity & is_better_solution(current_solution, current_value, best_result.pallets, best_result.total_value)) {
 
             //se sim, atualizar os valores
             best_result.pallets = current_solution;
