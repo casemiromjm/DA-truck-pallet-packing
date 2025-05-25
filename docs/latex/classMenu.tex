@@ -1,0 +1,141 @@
+\doxysection{Menu Class Reference}
+\hypertarget{classMenu}{}\label{classMenu}\index{Menu@{Menu}}
+
+
+{\ttfamily \#include $<$menu.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMenu_a4e4972cad109d331f7e12b3527965291}{Menu}} (const std\+::vector$<$ std\+::string $>$ \&options)
+\item 
+\mbox{\hyperlink{classMenu_a84e72d07561e570496341504021f6f8c}{Menu}} (const std\+::vector$<$ std\+::string $>$ \&options, const std\+::string \&content)
+\item 
+\mbox{\hyperlink{classMenu_add1b42b67973d8f24ae0b2b0c3d01daa}{Menu}} (const std\+::vector$<$ std\+::string $>$ \&options, const std\+::string \&content, const std\+::string \&selection)
+\item 
+\mbox{\hyperlink{classMenu_a831387f51358cfb88cd018e1777bc980}{\texorpdfstring{$\sim$}{\string~}\+Menu}} ()
+\item 
+void \mbox{\hyperlink{classMenu_ab23e3ecd837ea4228151c0939027fdc2}{print\+\_\+options}} ()
+\item 
+void \mbox{\hyperlink{classMenu_ad934617065b71b0aeedf9607569493f3}{print\+\_\+content}} () const
+\item 
+void \mbox{\hyperlink{classMenu_a139718455b849d1336cd7ed8c28f101c}{refresh\+\_\+screen}} ()
+\item 
+void \mbox{\hyperlink{classMenu_a24de75cc10faa44f0ada94b4fb0a06c1}{print\+\_\+selection}} () const
+\item 
+void \mbox{\hyperlink{classMenu_aa6ff784314cc009478562d9ab7a0af34}{print}} ()
+\item 
+void \mbox{\hyperlink{classMenu_a4e243c29642418de757ad88c9bae3211}{previous\+\_\+option}} ()
+\item 
+void \mbox{\hyperlink{classMenu_a64c04f77e4d1e11e85a62d860dbe1580}{next\+\_\+option}} ()
+\item 
+int \mbox{\hyperlink{classMenu_af93a970cdfec463a8cb25ca65bf51da5}{run}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMenu_a4e4972cad109d331f7e12b3527965291}\index{Menu@{Menu}!Menu@{Menu}}
+\index{Menu@{Menu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{Menu()}{Menu()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classMenu_a4e4972cad109d331f7e12b3527965291} 
+Menu\+::\+Menu (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{options}{}\end{DoxyParamCaption})}
+
+Constructor for \doxylink{classMenu}{Menu} class 
+\begin{DoxyParams}{Parameters}
+{\em options} & \doxylink{classMenu}{Menu} navigation options \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classMenu_a84e72d07561e570496341504021f6f8c}\index{Menu@{Menu}!Menu@{Menu}}
+\index{Menu@{Menu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{Menu()}{Menu()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classMenu_a84e72d07561e570496341504021f6f8c} 
+Menu\+::\+Menu (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{options}{, }\item[{const std\+::string \&}]{content}{}\end{DoxyParamCaption})}
+
+Constructor for \doxylink{classMenu}{Menu} class 
+\begin{DoxyParams}{Parameters}
+{\em options} & \doxylink{classMenu}{Menu} navigation options \\
+\hline
+{\em content} & Static content displayed in \doxylink{classMenu}{Menu} instance \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classMenu_add1b42b67973d8f24ae0b2b0c3d01daa}\index{Menu@{Menu}!Menu@{Menu}}
+\index{Menu@{Menu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{Menu()}{Menu()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classMenu_add1b42b67973d8f24ae0b2b0c3d01daa} 
+Menu\+::\+Menu (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{options}{, }\item[{const std\+::string \&}]{content}{, }\item[{const std\+::string \&}]{selection}{}\end{DoxyParamCaption})}
+
+Constructor for \doxylink{classMenu}{Menu} class 
+\begin{DoxyParams}{Parameters}
+{\em options} & \doxylink{classMenu}{Menu} navigation options \\
+\hline
+{\em content} & Static content displayed in \doxylink{classMenu}{Menu} instance \\
+\hline
+{\em selection} & User selection to be displayed in \doxylink{classMenu}{Menu} instance \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classMenu_a831387f51358cfb88cd018e1777bc980}\index{Menu@{Menu}!````~Menu@{\texorpdfstring{$\sim$}{\string~}Menu}}
+\index{````~Menu@{\texorpdfstring{$\sim$}{\string~}Menu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Menu()}{\string~Menu()}}
+{\footnotesize\ttfamily \label{classMenu_a831387f51358cfb88cd018e1777bc980} 
+Menu\+::\texorpdfstring{$\sim$}{\string~}\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\doxylink{classMenu}{Menu} destructor 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMenu_a64c04f77e4d1e11e85a62d860dbe1580}\index{Menu@{Menu}!next\_option@{next\_option}}
+\index{next\_option@{next\_option}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{next\_option()}{next\_option()}}
+{\footnotesize\ttfamily \label{classMenu_a64c04f77e4d1e11e85a62d860dbe1580} 
+void Menu\+::next\+\_\+option (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Moves forward \doxylink{classMenu}{Menu} option selection \Hypertarget{classMenu_a4e243c29642418de757ad88c9bae3211}\index{Menu@{Menu}!previous\_option@{previous\_option}}
+\index{previous\_option@{previous\_option}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{previous\_option()}{previous\_option()}}
+{\footnotesize\ttfamily \label{classMenu_a4e243c29642418de757ad88c9bae3211} 
+void Menu\+::previous\+\_\+option (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Moves back \doxylink{classMenu}{Menu} option selection \Hypertarget{classMenu_aa6ff784314cc009478562d9ab7a0af34}\index{Menu@{Menu}!print@{print}}
+\index{print@{print}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily \label{classMenu_aa6ff784314cc009478562d9ab7a0af34} 
+void Menu\+::print (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\doxylink{classMenu}{Menu} generic print \Hypertarget{classMenu_ad934617065b71b0aeedf9607569493f3}\index{Menu@{Menu}!print\_content@{print\_content}}
+\index{print\_content@{print\_content}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{print\_content()}{print\_content()}}
+{\footnotesize\ttfamily \label{classMenu_ad934617065b71b0aeedf9607569493f3} 
+void Menu\+::print\+\_\+content (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Prints the \doxylink{classMenu}{Menu} header to the screen \Hypertarget{classMenu_ab23e3ecd837ea4228151c0939027fdc2}\index{Menu@{Menu}!print\_options@{print\_options}}
+\index{print\_options@{print\_options}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{print\_options()}{print\_options()}}
+{\footnotesize\ttfamily \label{classMenu_ab23e3ecd837ea4228151c0939027fdc2} 
+void Menu\+::print\+\_\+options (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Prints \doxylink{classMenu}{Menu} options to the screen \Hypertarget{classMenu_a24de75cc10faa44f0ada94b4fb0a06c1}\index{Menu@{Menu}!print\_selection@{print\_selection}}
+\index{print\_selection@{print\_selection}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{print\_selection()}{print\_selection()}}
+{\footnotesize\ttfamily \label{classMenu_a24de75cc10faa44f0ada94b4fb0a06c1} 
+void Menu\+::print\+\_\+selection (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Print algorithm and dataset selections \Hypertarget{classMenu_a139718455b849d1336cd7ed8c28f101c}\index{Menu@{Menu}!refresh\_screen@{refresh\_screen}}
+\index{refresh\_screen@{refresh\_screen}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{refresh\_screen()}{refresh\_screen()}}
+{\footnotesize\ttfamily \label{classMenu_a139718455b849d1336cd7ed8c28f101c} 
+void Menu\+::refresh\+\_\+screen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Clears the screen \Hypertarget{classMenu_af93a970cdfec463a8cb25ca65bf51da5}\index{Menu@{Menu}!run@{run}}
+\index{run@{run}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{classMenu_af93a970cdfec463a8cb25ca65bf51da5} 
+int Menu\+::run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\doxylink{classMenu}{Menu} loop \begin{DoxyReturn}{Returns}
+Chosen option 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+menu/\mbox{\hyperlink{menu_8h}{menu.\+h}}\item 
+menu/\mbox{\hyperlink{menu_8cpp}{menu.\+cpp}}\end{DoxyCompactItemize}

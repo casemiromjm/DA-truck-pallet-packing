@@ -1,0 +1,24 @@
+\doxysection{brute\+\_\+force.\+h}
+\hypertarget{brute__force_8h_source}{}\label{brute__force_8h_source}\index{algorithms/brute\_force.h@{algorithms/brute\_force.h}}
+\mbox{\hyperlink{brute__force_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BRUTE\_FORCE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BRUTE\_FORCE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{app_8h}{../app.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{truck_8h}{../data\_structures/truck.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pallet_8h}{../data\_structures/pallet.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \mbox{\hyperlink{structReturnResult}{ReturnResult}}\ \mbox{\hyperlink{brute__force_8h_aef7e0e85ef6b83c028a3e0c8fa5c6eda}{brute\_force\_packing}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classTruck}{Truck}}\&\ truck,\ std::chrono::microseconds\&\ total\_duration,\ \textcolor{keywordtype}{bool}\&\ isValidRun);}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \mbox{\hyperlink{structReturnResult}{ReturnResult}}\ \mbox{\hyperlink{brute__force_8h_ae4c57da654a64f4602a44070bdd007ae}{brute\_force\_backtracking}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classTruck}{Truck}}\&\ truck,\ std::chrono::microseconds\&\ total\_duration,\ \textcolor{keywordtype}{bool}\&\ isValidRun);}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{brute__force_8h_a706ca17298069cba63229a367ec92221}{backtrack}}(\textcolor{keyword}{const}\ std::vector<Pallet>\&\ pallets,\ \textcolor{keywordtype}{int}\ index,\ \textcolor{keywordtype}{double}\ current\_weight,\ \textcolor{keywordtype}{double}\ current\_value,\ \textcolor{keywordtype}{int}\ max\_capacity,}
+\DoxyCodeLine{00016\ \ \ \ \ std::vector<Pallet>\&\ current\_solution,\ std::vector<Pallet>\&\ best\_solution,\ \textcolor{keywordtype}{double}\&\ best\_value,\ \textcolor{keywordtype}{bool}\&\ isValidRun,\ std::chrono::time\_point<std::chrono::high\_resolution\_clock>\ start\_time);}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//BRUTE\_FORCE\_H}}
+
+\end{DoxyCode}

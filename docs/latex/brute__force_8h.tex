@@ -1,0 +1,37 @@
+\doxysection{algorithms/brute\+\_\+force.h File Reference}
+\hypertarget{brute__force_8h}{}\label{brute__force_8h}\index{algorithms/brute\_force.h@{algorithms/brute\_force.h}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include "{}../app.\+h"{}}\newline
+{\ttfamily \#include "{}../data\+\_\+structures/truck.\+h"{}}\newline
+{\ttfamily \#include "{}../data\+\_\+structures/pallet.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structReturnResult}{Return\+Result}} \mbox{\hyperlink{brute__force_8h_aef7e0e85ef6b83c028a3e0c8fa5c6eda}{brute\+\_\+force\+\_\+packing}} (const \mbox{\hyperlink{classTruck}{Truck}} \&truck, std\+::chrono\+::microseconds \&total\+\_\+duration, bool \&is\+Valid\+Run)
+\item 
+\mbox{\hyperlink{structReturnResult}{Return\+Result}} \mbox{\hyperlink{brute__force_8h_ae4c57da654a64f4602a44070bdd007ae}{brute\+\_\+force\+\_\+backtracking}} (const \mbox{\hyperlink{classTruck}{Truck}} \&truck, std\+::chrono\+::microseconds \&total\+\_\+duration, bool \&is\+Valid\+Run)
+\item 
+void \mbox{\hyperlink{brute__force_8h_a706ca17298069cba63229a367ec92221}{backtrack}} (const std\+::vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \&pallets, int index, double current\+\_\+weight, double current\+\_\+value, int max\+\_\+capacity, std\+::vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \&current\+\_\+solution, std\+::vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \&best\+\_\+solution, double \&best\+\_\+value, bool \&is\+Valid\+Run, std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::high\+\_\+resolution\+\_\+clock $>$ start\+\_\+time)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{brute__force_8h_a706ca17298069cba63229a367ec92221}\index{brute\_force.h@{brute\_force.h}!backtrack@{backtrack}}
+\index{backtrack@{backtrack}!brute\_force.h@{brute\_force.h}}
+\doxysubsubsection{\texorpdfstring{backtrack()}{backtrack()}}
+{\footnotesize\ttfamily \label{brute__force_8h_a706ca17298069cba63229a367ec92221} 
+void backtrack (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \&}]{pallets}{, }\item[{int}]{index}{, }\item[{double}]{current\+\_\+weight}{, }\item[{double}]{current\+\_\+value}{, }\item[{int}]{max\+\_\+capacity}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \&}]{current\+\_\+solution}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \&}]{best\+\_\+solution}{, }\item[{double \&}]{best\+\_\+value}{, }\item[{bool \&}]{is\+Valid\+Run}{, }\item[{std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::high\+\_\+resolution\+\_\+clock $>$}]{start\+\_\+time}{}\end{DoxyParamCaption})}
+
+\Hypertarget{brute__force_8h_ae4c57da654a64f4602a44070bdd007ae}\index{brute\_force.h@{brute\_force.h}!brute\_force\_backtracking@{brute\_force\_backtracking}}
+\index{brute\_force\_backtracking@{brute\_force\_backtracking}!brute\_force.h@{brute\_force.h}}
+\doxysubsubsection{\texorpdfstring{brute\_force\_backtracking()}{brute\_force\_backtracking()}}
+{\footnotesize\ttfamily \label{brute__force_8h_ae4c57da654a64f4602a44070bdd007ae} 
+\mbox{\hyperlink{structReturnResult}{Return\+Result}} brute\+\_\+force\+\_\+backtracking (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTruck}{Truck}} \&}]{truck}{, }\item[{std\+::chrono\+::microseconds \&}]{total\+\_\+duration}{, }\item[{bool \&}]{is\+Valid\+Run}{}\end{DoxyParamCaption})}
+
+\Hypertarget{brute__force_8h_aef7e0e85ef6b83c028a3e0c8fa5c6eda}\index{brute\_force.h@{brute\_force.h}!brute\_force\_packing@{brute\_force\_packing}}
+\index{brute\_force\_packing@{brute\_force\_packing}!brute\_force.h@{brute\_force.h}}
+\doxysubsubsection{\texorpdfstring{brute\_force\_packing()}{brute\_force\_packing()}}
+{\footnotesize\ttfamily \label{brute__force_8h_aef7e0e85ef6b83c028a3e0c8fa5c6eda} 
+\mbox{\hyperlink{structReturnResult}{Return\+Result}} brute\+\_\+force\+\_\+packing (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTruck}{Truck}} \&}]{truck}{, }\item[{std\+::chrono\+::microseconds \&}]{total\+\_\+duration}{, }\item[{bool \&}]{is\+Valid\+Run}{}\end{DoxyParamCaption})}
+

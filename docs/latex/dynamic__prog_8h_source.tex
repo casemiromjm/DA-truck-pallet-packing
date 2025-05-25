@@ -1,0 +1,21 @@
+\doxysection{dynamic\+\_\+prog.\+h}
+\hypertarget{dynamic__prog_8h_source}{}\label{dynamic__prog_8h_source}\index{algorithms/dynamic\_prog.h@{algorithms/dynamic\_prog.h}}
+\mbox{\hyperlink{dynamic__prog_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DYNAMIC\_PROG\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DYNAMIC\_PROG\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{app_8h}{../app.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{truck_8h}{../data\_structures/truck.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pallet_8h}{../data\_structures/pallet.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \mbox{\hyperlink{structReturnResult}{ReturnResult}}\ \mbox{\hyperlink{dynamic__prog_8h_ac62a1f1b143deb7af937c9427c397591}{dp\_packing}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classTruck}{Truck}}\&\ truck,\ std::chrono::microseconds\&\ total\_duration,\ \textcolor{keywordtype}{bool}\&\ isValidRun);}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{dynamic__prog_8h_ac86c7357aafec34842c5c27503683afe}{is\_better\_dp\_solution}}(\textcolor{keywordtype}{double}\ new\_val,\ \textcolor{keyword}{const}\ std::vector<int>\&\ new\_indices,}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ old\_val,\ \textcolor{keyword}{const}\ std::vector<int>\&\ old\_indices);}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//DYNAMIC\_PROG\_H}}
+
+\end{DoxyCode}

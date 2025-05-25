@@ -1,0 +1,42 @@
+\doxysection{algorithms/brute\+\_\+force.cpp File Reference}
+\hypertarget{brute__force_8cpp}{}\label{brute__force_8cpp}\index{algorithms/brute\_force.cpp@{algorithms/brute\_force.cpp}}
+{\ttfamily \#include "{}brute\+\_\+force.\+h"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{brute__force_8cpp_a82587003c364741b13be1b5096527ab1}{is\+\_\+better\+\_\+solution}} (const std\+::vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \&new\+\_\+solution, double new\+\_\+value, const std\+::vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \&current\+\_\+best, double current\+\_\+value)
+\item 
+\mbox{\hyperlink{structReturnResult}{Return\+Result}} \mbox{\hyperlink{brute__force_8cpp_aef7e0e85ef6b83c028a3e0c8fa5c6eda}{brute\+\_\+force\+\_\+packing}} (const \mbox{\hyperlink{classTruck}{Truck}} \&truck, std\+::chrono\+::microseconds \&total\+\_\+duration, bool \&is\+Valid\+Run)
+\item 
+void \mbox{\hyperlink{brute__force_8cpp_a19ecd9082a00f0cff71e6adb9c0ea49b}{backtrack}} (const std\+::vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \&pallets, int index, double current\+\_\+weight, double current\+\_\+value, int max\+\_\+capacity, std\+::vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \&current\+\_\+solution, \mbox{\hyperlink{structReturnResult}{Return\+Result}} \&best\+\_\+result, bool \&is\+Valid\+Run, std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::high\+\_\+resolution\+\_\+clock $>$ start\+\_\+time)
+\item 
+\mbox{\hyperlink{structReturnResult}{Return\+Result}} \mbox{\hyperlink{brute__force_8cpp_ae4c57da654a64f4602a44070bdd007ae}{brute\+\_\+force\+\_\+backtracking}} (const \mbox{\hyperlink{classTruck}{Truck}} \&truck, std\+::chrono\+::microseconds \&total\+\_\+duration, bool \&is\+Valid\+Run)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{brute__force_8cpp_a19ecd9082a00f0cff71e6adb9c0ea49b}\index{brute\_force.cpp@{brute\_force.cpp}!backtrack@{backtrack}}
+\index{backtrack@{backtrack}!brute\_force.cpp@{brute\_force.cpp}}
+\doxysubsubsection{\texorpdfstring{backtrack()}{backtrack()}}
+{\footnotesize\ttfamily \label{brute__force_8cpp_a19ecd9082a00f0cff71e6adb9c0ea49b} 
+void backtrack (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \&}]{pallets}{, }\item[{int}]{index}{, }\item[{double}]{current\+\_\+weight}{, }\item[{double}]{current\+\_\+value}{, }\item[{int}]{max\+\_\+capacity}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \&}]{current\+\_\+solution}{, }\item[{\mbox{\hyperlink{structReturnResult}{Return\+Result}} \&}]{best\+\_\+result}{, }\item[{bool \&}]{is\+Valid\+Run}{, }\item[{std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::high\+\_\+resolution\+\_\+clock $>$}]{start\+\_\+time}{}\end{DoxyParamCaption})}
+
+\Hypertarget{brute__force_8cpp_ae4c57da654a64f4602a44070bdd007ae}\index{brute\_force.cpp@{brute\_force.cpp}!brute\_force\_backtracking@{brute\_force\_backtracking}}
+\index{brute\_force\_backtracking@{brute\_force\_backtracking}!brute\_force.cpp@{brute\_force.cpp}}
+\doxysubsubsection{\texorpdfstring{brute\_force\_backtracking()}{brute\_force\_backtracking()}}
+{\footnotesize\ttfamily \label{brute__force_8cpp_ae4c57da654a64f4602a44070bdd007ae} 
+\mbox{\hyperlink{structReturnResult}{Return\+Result}} brute\+\_\+force\+\_\+backtracking (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTruck}{Truck}} \&}]{truck}{, }\item[{std\+::chrono\+::microseconds \&}]{total\+\_\+duration}{, }\item[{bool \&}]{is\+Valid\+Run}{}\end{DoxyParamCaption})}
+
+\Hypertarget{brute__force_8cpp_aef7e0e85ef6b83c028a3e0c8fa5c6eda}\index{brute\_force.cpp@{brute\_force.cpp}!brute\_force\_packing@{brute\_force\_packing}}
+\index{brute\_force\_packing@{brute\_force\_packing}!brute\_force.cpp@{brute\_force.cpp}}
+\doxysubsubsection{\texorpdfstring{brute\_force\_packing()}{brute\_force\_packing()}}
+{\footnotesize\ttfamily \label{brute__force_8cpp_aef7e0e85ef6b83c028a3e0c8fa5c6eda} 
+\mbox{\hyperlink{structReturnResult}{Return\+Result}} brute\+\_\+force\+\_\+packing (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTruck}{Truck}} \&}]{truck}{, }\item[{std\+::chrono\+::microseconds \&}]{total\+\_\+duration}{, }\item[{bool \&}]{is\+Valid\+Run}{}\end{DoxyParamCaption})}
+
+\Hypertarget{brute__force_8cpp_a82587003c364741b13be1b5096527ab1}\index{brute\_force.cpp@{brute\_force.cpp}!is\_better\_solution@{is\_better\_solution}}
+\index{is\_better\_solution@{is\_better\_solution}!brute\_force.cpp@{brute\_force.cpp}}
+\doxysubsubsection{\texorpdfstring{is\_better\_solution()}{is\_better\_solution()}}
+{\footnotesize\ttfamily \label{brute__force_8cpp_a82587003c364741b13be1b5096527ab1} 
+bool is\+\_\+better\+\_\+solution (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \&}]{new\+\_\+solution}{, }\item[{double}]{new\+\_\+value}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \&}]{current\+\_\+best}{, }\item[{double}]{current\+\_\+value}{}\end{DoxyParamCaption})}
+

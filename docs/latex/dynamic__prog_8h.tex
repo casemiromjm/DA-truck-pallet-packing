@@ -1,0 +1,29 @@
+\doxysection{algorithms/dynamic\+\_\+prog.h File Reference}
+\hypertarget{dynamic__prog_8h}{}\label{dynamic__prog_8h}\index{algorithms/dynamic\_prog.h@{algorithms/dynamic\_prog.h}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include "{}../app.\+h"{}}\newline
+{\ttfamily \#include "{}../data\+\_\+structures/truck.\+h"{}}\newline
+{\ttfamily \#include "{}../data\+\_\+structures/pallet.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structReturnResult}{Return\+Result}} \mbox{\hyperlink{dynamic__prog_8h_ac62a1f1b143deb7af937c9427c397591}{dp\+\_\+packing}} (const \mbox{\hyperlink{classTruck}{Truck}} \&truck, std\+::chrono\+::microseconds \&total\+\_\+duration, bool \&is\+Valid\+Run)
+\item 
+bool \mbox{\hyperlink{dynamic__prog_8h_ac86c7357aafec34842c5c27503683afe}{is\+\_\+better\+\_\+dp\+\_\+solution}} (double new\+\_\+val, const std\+::vector$<$ int $>$ \&new\+\_\+indices, double old\+\_\+val, const std\+::vector$<$ int $>$ \&old\+\_\+indices)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{dynamic__prog_8h_ac62a1f1b143deb7af937c9427c397591}\index{dynamic\_prog.h@{dynamic\_prog.h}!dp\_packing@{dp\_packing}}
+\index{dp\_packing@{dp\_packing}!dynamic\_prog.h@{dynamic\_prog.h}}
+\doxysubsubsection{\texorpdfstring{dp\_packing()}{dp\_packing()}}
+{\footnotesize\ttfamily \label{dynamic__prog_8h_ac62a1f1b143deb7af937c9427c397591} 
+\mbox{\hyperlink{structReturnResult}{Return\+Result}} dp\+\_\+packing (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTruck}{Truck}} \&}]{truck}{, }\item[{std\+::chrono\+::microseconds \&}]{total\+\_\+duration}{, }\item[{bool \&}]{is\+Valid\+Run}{}\end{DoxyParamCaption})}
+
+\Hypertarget{dynamic__prog_8h_ac86c7357aafec34842c5c27503683afe}\index{dynamic\_prog.h@{dynamic\_prog.h}!is\_better\_dp\_solution@{is\_better\_dp\_solution}}
+\index{is\_better\_dp\_solution@{is\_better\_dp\_solution}!dynamic\_prog.h@{dynamic\_prog.h}}
+\doxysubsubsection{\texorpdfstring{is\_better\_dp\_solution()}{is\_better\_dp\_solution()}}
+{\footnotesize\ttfamily \label{dynamic__prog_8h_ac86c7357aafec34842c5c27503683afe} 
+bool is\+\_\+better\+\_\+dp\+\_\+solution (\begin{DoxyParamCaption}\item[{double}]{new\+\_\+val}{, }\item[{const std\+::vector$<$ int $>$ \&}]{new\+\_\+indices}{, }\item[{double}]{old\+\_\+val}{, }\item[{const std\+::vector$<$ int $>$ \&}]{old\+\_\+indices}{}\end{DoxyParamCaption})}
+

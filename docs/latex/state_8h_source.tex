@@ -1,0 +1,40 @@
+\doxysection{state.\+h}
+\hypertarget{state_8h_source}{}\label{state_8h_source}\index{menu/state.h@{menu/state.h}}
+\mbox{\hyperlink{state_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ STATE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ STATE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classState_ab91bb1dd5aa6260ab2a456581daf9ec2}{State}}\ \{}
+\DoxyCodeLine{00005\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5}{StateID}}\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ main\ menu}}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5a186495f7da296bf880df3a22a492b378}{MAIN}},}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ info\ about\ what\ we\ implemented}}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5a551b723eafd6a31d444fcb2f5920fbd3}{INFO}},}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ choose\ algorithm\ screen}}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5acc42f38c94fd1898b9e8a14132d94261}{ALGORITHM}},}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ reading\ dataset\ screen}}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5a1688c5f13ed0cc68689219cac28e9ca6}{DATASET}},}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ show\ results\ screen}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5a44795920b3da1ad37ffcee4c869a5afa}{RESULTS}},}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ construct\ the\ performance\ CSV}}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5a76a3b37064cb2f9c9e0ffd51fa8c5158}{DATA\_CONSTRUCT}},}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5a2c616b2713e2e0aed04b4c4752c88133}{FINISHED}}}
+\DoxyCodeLine{00020\ \ \ \ \ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{classState_ab91bb1dd5aa6260ab2a456581daf9ec2}{State}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classState_aa19e6be49176416450531daca27b096e}{update\_state}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5}{StateID}}\&\ new\_state);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classState_abefc818f3ca5103bd8bb951e514b57b1}{check\_curr\_state}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5}{StateID}}\&\ state)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5}{StateID}}\ \mbox{\hyperlink{classState_ad28c51697f3f5a8ab41089df54b07295}{get\_curr\_state}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classState_af47409a048e8f761370efbbccc6f977e}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5}{StateID}}\&\ s)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5}{StateID}}\ current\_state;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00034\ }
+
+\end{DoxyCode}

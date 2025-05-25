@@ -1,0 +1,105 @@
+\doxysection{app.\+h}
+\hypertarget{app_8h_source}{}\label{app_8h_source}\mbox{\hyperlink{app_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ APP\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ APP\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{state_8h}{menu/state.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{truck_8h}{data\_structures/truck.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//store\ the\ data\ to\ the\ output}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structReturnResult}{ReturnResult}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ std::vector<Pallet>\ \mbox{\hyperlink{structReturnResult_a2fe543a1fddaef0b1d2d12f030c7d908}{pallets}};}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structReturnResult_aaa4b607d66fe5d9a222420c1c27b81ce}{total\_weight}}\ =\ 0.0;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structReturnResult_a8d5791e906de3d8a7cd043a8cb29800a}{total\_value}}\ =\ 0.0;}
+\DoxyCodeLine{00016\ \};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classApp_acb8cbf3e285b91d0170ffe87df5989c5}{App}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{classApp_a1b67d3d05d83f209b465750d89263f58}{Algorithm}}\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classApp_a1b67d3d05d83f209b465750d89263f58ab50339a10e1de285ac99d4c3990b8693}{NONE}},}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classApp_a1b67d3d05d83f209b465750d89263f58a6ef113c006f2854dd4343c24cd2bd58d}{BRUTE\_FORCE}},}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classApp_a1b67d3d05d83f209b465750d89263f58a9cd181163846593b7a2a10f4718f7b94}{BRUTE\_FORCE\_BACKTRACKING}},}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classApp_a1b67d3d05d83f209b465750d89263f58a0fcc90da4811c877ba9f9c12f7d60bc9}{DYNAMIC}},}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classApp_a1b67d3d05d83f209b465750d89263f58a349ab98a75758a304b172797510f0f06}{GREEDY}},}
+\DoxyCodeLine{00026\ \ \ \ \ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7}{Dataset}}\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classApp_a1b67d3d05d83f209b465750d89263f58ab50339a10e1de285ac99d4c3990b8693}{NONE}},}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a3ce8225271f8d46a3930afaf1318f2f6}{DATASET1}},}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7adfc7d4551a039696bfd2cf9c433de6f3}{DATASET2}},}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7aaa864cb21860c12d6f4b5aed5e68973f}{DATASET3}},}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a407b32ecddfcc4cc4e26e1e48c7ade48}{DATASET4}},}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7ae5c7446d23fa6f0a1855867deb45e94f}{DATASET5}},}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a269453a99c7ddfa02b0b0d203041d347}{DATASET6}},}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a86af6500a275ce3da549867ff3ceeb99}{DATASET7}},}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a9db34332e765cf5a4d2f87982039e5bd}{DATASET8}},}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a3c8e78c8d3fc09a1ef4321704e1ddaa5}{DATASET9}},}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a2a282fef62edd6999fae4f417a32af25}{DATASET10}},}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a9d802378f0895610d67ca746a8355739}{CUSTOM\_DATASET}}}
+\DoxyCodeLine{00041\ \ \ \ \ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classApp_acb8cbf3e285b91d0170ffe87df5989c5}{App}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5}{State::StateID}}\ \mbox{\hyperlink{classApp_a98eb332b95c1cf11981166570d83dc15}{get\_app\_state}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classApp_a1b67d3d05d83f209b465750d89263f58}{Algorithm}}\ \mbox{\hyperlink{classApp_a87f3c3252560736e4e98b51d20ea20e9}{get\_algorithm}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ \ \ \ \ std::string\ \mbox{\hyperlink{classApp_a786c8dda5dd9f4fd8c72f7fcdcd6b6f1}{get\_algorithm\_name}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classApp_a6ee5475ab38d5035736fa7d76bd080ff}{set\_algorithm}}(\mbox{\hyperlink{classApp_a1b67d3d05d83f209b465750d89263f58}{Algorithm}}\ alg);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7}{Dataset}}\ \mbox{\hyperlink{classApp_a4f6e58f48d55fdb16f20562e5ee10e3a}{get\_dataset}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00051\ \ \ \ \ std::string\ \mbox{\hyperlink{classApp_acc668761fc89e327f3d7182b5c2a50d3}{get\_dataset\_name}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classApp_ab6bb965162e6ff22dd14dba4d5027eff}{set\_dataset}}(\mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7}{Dataset}}\ data);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classTruck}{Truck}}\ \mbox{\hyperlink{classApp_a57d81e8651d703c48b89113e580e2e67}{get\_truck}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classApp_a53b750fa72b2660c88975af0bc89ddf9}{read\_dataset}}();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classApp_ae09dc71078b64c56c673b1ad1d25b5d1}{run}}();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classApp_a02e2aa7f5671574106f64d2217de4e41}{convert\_num\_str}}(\textcolor{keywordtype}{int}\ num);\ \ \textcolor{comment}{//\ auxiliary\ function}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{classState}{State}}\ app\_state;}
+\DoxyCodeLine{00064\ \ \ \ \ std::vector<std::string>\ algorithm\_names\ =\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}None"{}},}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Brute-\/Force"{}},}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Brute-\/Force\ Backtracking"{}},}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Dynamic\ Programming"{}},}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Greedy"{}},}
+\DoxyCodeLine{00070\ \ \ \ \ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ std::vector<std::string>\ dataset\_names\ =\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}None"{}},}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Example\ 1"{}},}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Example\ 2"{}},}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Example\ 3"{}},}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Example\ 4"{}},}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Example\ 5"{}},}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Example\ 6"{}},}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Example\ 7"{}},}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Example\ 8"{}},}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Example\ 9"{}},}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Example\ 10"{}},}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Custom"{}}}
+\DoxyCodeLine{00085\ \ \ \ \ \};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{classApp_a1b67d3d05d83f209b465750d89263f58}{Algorithm}}\ chosen\_algorithm\ =\ \mbox{\hyperlink{classApp_a1b67d3d05d83f209b465750d89263f58ab50339a10e1de285ac99d4c3990b8693}{Algorithm::NONE}};}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7}{Dataset}}\ chosen\_dataset\ =\ \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7ab50339a10e1de285ac99d4c3990b8693}{Dataset::NONE}};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ Truck\ truck;}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ std::chrono::microseconds\ total\_duration\{0\};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ ReturnResult\ run\_brute\_force();}
+\DoxyCodeLine{00095\ \ \ \ \ ReturnResult\ run\_dp();}
+\DoxyCodeLine{00096\ \ \ \ \ ReturnResult\ run\_greedy();}
+\DoxyCodeLine{00097\ \ \ \ \ ReturnResult\ run\_brute\_force\_backtracking();}
+\DoxyCodeLine{00098\ \};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

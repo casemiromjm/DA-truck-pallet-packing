@@ -1,0 +1,114 @@
+\doxysection{State Class Reference}
+\hypertarget{classState}{}\label{classState}\index{State@{State}}
+
+
+{\ttfamily \#include $<$state.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5}{State\+ID}} \{ \newline
+\mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5a186495f7da296bf880df3a22a492b378}{MAIN}}
+, \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5a551b723eafd6a31d444fcb2f5920fbd3}{INFO}}
+, \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5acc42f38c94fd1898b9e8a14132d94261}{ALGORITHM}}
+, \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5a1688c5f13ed0cc68689219cac28e9ca6}{DATASET}}
+, \newline
+\mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5a44795920b3da1ad37ffcee4c869a5afa}{RESULTS}}
+, \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5a76a3b37064cb2f9c9e0ffd51fa8c5158}{DATA\+\_\+\+CONSTRUCT}}
+, \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5a2c616b2713e2e0aed04b4c4752c88133}{FINISHED}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classState_ab91bb1dd5aa6260ab2a456581daf9ec2}{State}} ()
+\item 
+void \mbox{\hyperlink{classState_aa19e6be49176416450531daca27b096e}{update\+\_\+state}} (const \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5}{State\+ID}} \&new\+\_\+state)
+\item 
+bool \mbox{\hyperlink{classState_abefc818f3ca5103bd8bb951e514b57b1}{check\+\_\+curr\+\_\+state}} (const \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5}{State\+ID}} \&state) const
+\item 
+\mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5}{State\+ID}} \mbox{\hyperlink{classState_ad28c51697f3f5a8ab41089df54b07295}{get\+\_\+curr\+\_\+state}} () const
+\item 
+bool \mbox{\hyperlink{classState_af47409a048e8f761370efbbccc6f977e}{operator==}} (const \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5}{State\+ID}} \&s) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classState_a5091fc7fac14f73979d57f0a6a510fb5}\index{State@{State}!StateID@{StateID}}
+\index{StateID@{StateID}!State@{State}}
+\doxysubsubsection{\texorpdfstring{StateID}{StateID}}
+{\footnotesize\ttfamily \label{classState_a5091fc7fac14f73979d57f0a6a510fb5} 
+enum class \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5}{State\+::\+State\+ID}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAIN@{MAIN}!State@{State}}\index{State@{State}!MAIN@{MAIN}}}\Hypertarget{classState_a5091fc7fac14f73979d57f0a6a510fb5a186495f7da296bf880df3a22a492b378}\label{classState_a5091fc7fac14f73979d57f0a6a510fb5a186495f7da296bf880df3a22a492b378} 
+MAIN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INFO@{INFO}!State@{State}}\index{State@{State}!INFO@{INFO}}}\Hypertarget{classState_a5091fc7fac14f73979d57f0a6a510fb5a551b723eafd6a31d444fcb2f5920fbd3}\label{classState_a5091fc7fac14f73979d57f0a6a510fb5a551b723eafd6a31d444fcb2f5920fbd3} 
+INFO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALGORITHM@{ALGORITHM}!State@{State}}\index{State@{State}!ALGORITHM@{ALGORITHM}}}\Hypertarget{classState_a5091fc7fac14f73979d57f0a6a510fb5acc42f38c94fd1898b9e8a14132d94261}\label{classState_a5091fc7fac14f73979d57f0a6a510fb5acc42f38c94fd1898b9e8a14132d94261} 
+ALGORITHM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DATASET@{DATASET}!State@{State}}\index{State@{State}!DATASET@{DATASET}}}\Hypertarget{classState_a5091fc7fac14f73979d57f0a6a510fb5a1688c5f13ed0cc68689219cac28e9ca6}\label{classState_a5091fc7fac14f73979d57f0a6a510fb5a1688c5f13ed0cc68689219cac28e9ca6} 
+DATASET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RESULTS@{RESULTS}!State@{State}}\index{State@{State}!RESULTS@{RESULTS}}}\Hypertarget{classState_a5091fc7fac14f73979d57f0a6a510fb5a44795920b3da1ad37ffcee4c869a5afa}\label{classState_a5091fc7fac14f73979d57f0a6a510fb5a44795920b3da1ad37ffcee4c869a5afa} 
+RESULTS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DATA\_CONSTRUCT@{DATA\_CONSTRUCT}!State@{State}}\index{State@{State}!DATA\_CONSTRUCT@{DATA\_CONSTRUCT}}}\Hypertarget{classState_a5091fc7fac14f73979d57f0a6a510fb5a76a3b37064cb2f9c9e0ffd51fa8c5158}\label{classState_a5091fc7fac14f73979d57f0a6a510fb5a76a3b37064cb2f9c9e0ffd51fa8c5158} 
+DATA\+\_\+\+CONSTRUCT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FINISHED@{FINISHED}!State@{State}}\index{State@{State}!FINISHED@{FINISHED}}}\Hypertarget{classState_a5091fc7fac14f73979d57f0a6a510fb5a2c616b2713e2e0aed04b4c4752c88133}\label{classState_a5091fc7fac14f73979d57f0a6a510fb5a2c616b2713e2e0aed04b4c4752c88133} 
+FINISHED&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classState_ab91bb1dd5aa6260ab2a456581daf9ec2}\index{State@{State}!State@{State}}
+\index{State@{State}!State@{State}}
+\doxysubsubsection{\texorpdfstring{State()}{State()}}
+{\footnotesize\ttfamily \label{classState_ab91bb1dd5aa6260ab2a456581daf9ec2} 
+State\+::\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classState_abefc818f3ca5103bd8bb951e514b57b1}\index{State@{State}!check\_curr\_state@{check\_curr\_state}}
+\index{check\_curr\_state@{check\_curr\_state}!State@{State}}
+\doxysubsubsection{\texorpdfstring{check\_curr\_state()}{check\_curr\_state()}}
+{\footnotesize\ttfamily \label{classState_abefc818f3ca5103bd8bb951e514b57b1} 
+bool State\+::check\+\_\+curr\+\_\+state (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5}{State\+ID}} \&}]{state}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classState_ad28c51697f3f5a8ab41089df54b07295}\index{State@{State}!get\_curr\_state@{get\_curr\_state}}
+\index{get\_curr\_state@{get\_curr\_state}!State@{State}}
+\doxysubsubsection{\texorpdfstring{get\_curr\_state()}{get\_curr\_state()}}
+{\footnotesize\ttfamily \label{classState_ad28c51697f3f5a8ab41089df54b07295} 
+\mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5}{State\+::\+State\+ID}} State\+::get\+\_\+curr\+\_\+state (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classState_af47409a048e8f761370efbbccc6f977e}\index{State@{State}!operator==@{operator==}}
+\index{operator==@{operator==}!State@{State}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{classState_af47409a048e8f761370efbbccc6f977e} 
+bool State\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5}{State\+ID}} \&}]{s}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classState_aa19e6be49176416450531daca27b096e}\index{State@{State}!update\_state@{update\_state}}
+\index{update\_state@{update\_state}!State@{State}}
+\doxysubsubsection{\texorpdfstring{update\_state()}{update\_state()}}
+{\footnotesize\ttfamily \label{classState_aa19e6be49176416450531daca27b096e} 
+void State\+::update\+\_\+state (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5}{State\+ID}} \&}]{new\+\_\+state}{}\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+menu/\mbox{\hyperlink{state_8h}{state.\+h}}\item 
+menu/\mbox{\hyperlink{state_8cpp}{state.\+cpp}}\end{DoxyCompactItemize}

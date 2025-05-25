@@ -1,0 +1,244 @@
+\doxysection{App Class Reference}
+\hypertarget{classApp}{}\label{classApp}\index{App@{App}}
+
+
+{\ttfamily \#include $<$app.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{classApp_a1b67d3d05d83f209b465750d89263f58}{Algorithm}} \{ \newline
+\mbox{\hyperlink{classApp_a1b67d3d05d83f209b465750d89263f58ab50339a10e1de285ac99d4c3990b8693}{NONE}}
+, \mbox{\hyperlink{classApp_a1b67d3d05d83f209b465750d89263f58a6ef113c006f2854dd4343c24cd2bd58d}{BRUTE\+\_\+\+FORCE}}
+, \mbox{\hyperlink{classApp_a1b67d3d05d83f209b465750d89263f58a9cd181163846593b7a2a10f4718f7b94}{BRUTE\+\_\+\+FORCE\+\_\+\+BACKTRACKING}}
+, \mbox{\hyperlink{classApp_a1b67d3d05d83f209b465750d89263f58a0fcc90da4811c877ba9f9c12f7d60bc9}{DYNAMIC}}
+, \newline
+\mbox{\hyperlink{classApp_a1b67d3d05d83f209b465750d89263f58a349ab98a75758a304b172797510f0f06}{GREEDY}}
+ \}
+\item 
+enum class \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7}{Dataset}} \{ \newline
+\mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7ab50339a10e1de285ac99d4c3990b8693}{NONE}}
+, \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a3ce8225271f8d46a3930afaf1318f2f6}{DATASET1}}
+, \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7adfc7d4551a039696bfd2cf9c433de6f3}{DATASET2}}
+, \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7aaa864cb21860c12d6f4b5aed5e68973f}{DATASET3}}
+, \newline
+\mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a407b32ecddfcc4cc4e26e1e48c7ade48}{DATASET4}}
+, \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7ae5c7446d23fa6f0a1855867deb45e94f}{DATASET5}}
+, \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a269453a99c7ddfa02b0b0d203041d347}{DATASET6}}
+, \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a86af6500a275ce3da549867ff3ceeb99}{DATASET7}}
+, \newline
+\mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a9db34332e765cf5a4d2f87982039e5bd}{DATASET8}}
+, \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a3c8e78c8d3fc09a1ef4321704e1ddaa5}{DATASET9}}
+, \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a2a282fef62edd6999fae4f417a32af25}{DATASET10}}
+, \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a9d802378f0895610d67ca746a8355739}{CUSTOM\+\_\+\+DATASET}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classApp_acb8cbf3e285b91d0170ffe87df5989c5}{App}} ()
+\item 
+\mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5}{State\+::\+State\+ID}} \mbox{\hyperlink{classApp_a98eb332b95c1cf11981166570d83dc15}{get\+\_\+app\+\_\+state}} () const
+\item 
+\mbox{\hyperlink{classApp_a1b67d3d05d83f209b465750d89263f58}{Algorithm}} \mbox{\hyperlink{classApp_a87f3c3252560736e4e98b51d20ea20e9}{get\+\_\+algorithm}} () const
+\item 
+std\+::string \mbox{\hyperlink{classApp_a786c8dda5dd9f4fd8c72f7fcdcd6b6f1}{get\+\_\+algorithm\+\_\+name}} () const
+\item 
+void \mbox{\hyperlink{classApp_a6ee5475ab38d5035736fa7d76bd080ff}{set\+\_\+algorithm}} (\mbox{\hyperlink{classApp_a1b67d3d05d83f209b465750d89263f58}{Algorithm}} alg)
+\item 
+\mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7}{Dataset}} \mbox{\hyperlink{classApp_a4f6e58f48d55fdb16f20562e5ee10e3a}{get\+\_\+dataset}} () const
+\item 
+std\+::string \mbox{\hyperlink{classApp_acc668761fc89e327f3d7182b5c2a50d3}{get\+\_\+dataset\+\_\+name}} () const
+\item 
+void \mbox{\hyperlink{classApp_ab6bb965162e6ff22dd14dba4d5027eff}{set\+\_\+dataset}} (\mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7}{Dataset}} data)
+\item 
+\mbox{\hyperlink{classTruck}{Truck}} \mbox{\hyperlink{classApp_a57d81e8651d703c48b89113e580e2e67}{get\+\_\+truck}} () const
+\item 
+void \mbox{\hyperlink{classApp_a53b750fa72b2660c88975af0bc89ddf9}{read\+\_\+dataset}} ()
+\item 
+void \mbox{\hyperlink{classApp_ae09dc71078b64c56c673b1ad1d25b5d1}{run}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classApp_a02e2aa7f5671574106f64d2217de4e41}{convert\+\_\+num\+\_\+str}} (int num)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classApp_a1b67d3d05d83f209b465750d89263f58}\index{App@{App}!Algorithm@{Algorithm}}
+\index{Algorithm@{Algorithm}!App@{App}}
+\doxysubsubsection{\texorpdfstring{Algorithm}{Algorithm}}
+{\footnotesize\ttfamily \label{classApp_a1b67d3d05d83f209b465750d89263f58} 
+enum class \mbox{\hyperlink{classApp_a1b67d3d05d83f209b465750d89263f58}{App\+::\+Algorithm}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE@{NONE}!App@{App}}\index{App@{App}!NONE@{NONE}}}\Hypertarget{classApp_a1b67d3d05d83f209b465750d89263f58ab50339a10e1de285ac99d4c3990b8693}\label{classApp_a1b67d3d05d83f209b465750d89263f58ab50339a10e1de285ac99d4c3990b8693} 
+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BRUTE\_FORCE@{BRUTE\_FORCE}!App@{App}}\index{App@{App}!BRUTE\_FORCE@{BRUTE\_FORCE}}}\Hypertarget{classApp_a1b67d3d05d83f209b465750d89263f58a6ef113c006f2854dd4343c24cd2bd58d}\label{classApp_a1b67d3d05d83f209b465750d89263f58a6ef113c006f2854dd4343c24cd2bd58d} 
+BRUTE\+\_\+\+FORCE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BRUTE\_FORCE\_BACKTRACKING@{BRUTE\_FORCE\_BACKTRACKING}!App@{App}}\index{App@{App}!BRUTE\_FORCE\_BACKTRACKING@{BRUTE\_FORCE\_BACKTRACKING}}}\Hypertarget{classApp_a1b67d3d05d83f209b465750d89263f58a9cd181163846593b7a2a10f4718f7b94}\label{classApp_a1b67d3d05d83f209b465750d89263f58a9cd181163846593b7a2a10f4718f7b94} 
+BRUTE\+\_\+\+FORCE\+\_\+\+BACKTRACKING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DYNAMIC@{DYNAMIC}!App@{App}}\index{App@{App}!DYNAMIC@{DYNAMIC}}}\Hypertarget{classApp_a1b67d3d05d83f209b465750d89263f58a0fcc90da4811c877ba9f9c12f7d60bc9}\label{classApp_a1b67d3d05d83f209b465750d89263f58a0fcc90da4811c877ba9f9c12f7d60bc9} 
+DYNAMIC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GREEDY@{GREEDY}!App@{App}}\index{App@{App}!GREEDY@{GREEDY}}}\Hypertarget{classApp_a1b67d3d05d83f209b465750d89263f58a349ab98a75758a304b172797510f0f06}\label{classApp_a1b67d3d05d83f209b465750d89263f58a349ab98a75758a304b172797510f0f06} 
+GREEDY&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{classApp_a0e8ddfe41df9e55f8396b90fd6527af7}\index{App@{App}!Dataset@{Dataset}}
+\index{Dataset@{Dataset}!App@{App}}
+\doxysubsubsection{\texorpdfstring{Dataset}{Dataset}}
+{\footnotesize\ttfamily \label{classApp_a0e8ddfe41df9e55f8396b90fd6527af7} 
+enum class \mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7}{App\+::\+Dataset}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE@{NONE}!App@{App}}\index{App@{App}!NONE@{NONE}}}\Hypertarget{classApp_a0e8ddfe41df9e55f8396b90fd6527af7ab50339a10e1de285ac99d4c3990b8693}\label{classApp_a0e8ddfe41df9e55f8396b90fd6527af7ab50339a10e1de285ac99d4c3990b8693} 
+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DATASET1@{DATASET1}!App@{App}}\index{App@{App}!DATASET1@{DATASET1}}}\Hypertarget{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a3ce8225271f8d46a3930afaf1318f2f6}\label{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a3ce8225271f8d46a3930afaf1318f2f6} 
+DATASET1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DATASET2@{DATASET2}!App@{App}}\index{App@{App}!DATASET2@{DATASET2}}}\Hypertarget{classApp_a0e8ddfe41df9e55f8396b90fd6527af7adfc7d4551a039696bfd2cf9c433de6f3}\label{classApp_a0e8ddfe41df9e55f8396b90fd6527af7adfc7d4551a039696bfd2cf9c433de6f3} 
+DATASET2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DATASET3@{DATASET3}!App@{App}}\index{App@{App}!DATASET3@{DATASET3}}}\Hypertarget{classApp_a0e8ddfe41df9e55f8396b90fd6527af7aaa864cb21860c12d6f4b5aed5e68973f}\label{classApp_a0e8ddfe41df9e55f8396b90fd6527af7aaa864cb21860c12d6f4b5aed5e68973f} 
+DATASET3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DATASET4@{DATASET4}!App@{App}}\index{App@{App}!DATASET4@{DATASET4}}}\Hypertarget{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a407b32ecddfcc4cc4e26e1e48c7ade48}\label{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a407b32ecddfcc4cc4e26e1e48c7ade48} 
+DATASET4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DATASET5@{DATASET5}!App@{App}}\index{App@{App}!DATASET5@{DATASET5}}}\Hypertarget{classApp_a0e8ddfe41df9e55f8396b90fd6527af7ae5c7446d23fa6f0a1855867deb45e94f}\label{classApp_a0e8ddfe41df9e55f8396b90fd6527af7ae5c7446d23fa6f0a1855867deb45e94f} 
+DATASET5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DATASET6@{DATASET6}!App@{App}}\index{App@{App}!DATASET6@{DATASET6}}}\Hypertarget{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a269453a99c7ddfa02b0b0d203041d347}\label{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a269453a99c7ddfa02b0b0d203041d347} 
+DATASET6&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DATASET7@{DATASET7}!App@{App}}\index{App@{App}!DATASET7@{DATASET7}}}\Hypertarget{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a86af6500a275ce3da549867ff3ceeb99}\label{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a86af6500a275ce3da549867ff3ceeb99} 
+DATASET7&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DATASET8@{DATASET8}!App@{App}}\index{App@{App}!DATASET8@{DATASET8}}}\Hypertarget{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a9db34332e765cf5a4d2f87982039e5bd}\label{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a9db34332e765cf5a4d2f87982039e5bd} 
+DATASET8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DATASET9@{DATASET9}!App@{App}}\index{App@{App}!DATASET9@{DATASET9}}}\Hypertarget{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a3c8e78c8d3fc09a1ef4321704e1ddaa5}\label{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a3c8e78c8d3fc09a1ef4321704e1ddaa5} 
+DATASET9&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DATASET10@{DATASET10}!App@{App}}\index{App@{App}!DATASET10@{DATASET10}}}\Hypertarget{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a2a282fef62edd6999fae4f417a32af25}\label{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a2a282fef62edd6999fae4f417a32af25} 
+DATASET10&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CUSTOM\_DATASET@{CUSTOM\_DATASET}!App@{App}}\index{App@{App}!CUSTOM\_DATASET@{CUSTOM\_DATASET}}}\Hypertarget{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a9d802378f0895610d67ca746a8355739}\label{classApp_a0e8ddfe41df9e55f8396b90fd6527af7a9d802378f0895610d67ca746a8355739} 
+CUSTOM\+\_\+\+DATASET&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classApp_acb8cbf3e285b91d0170ffe87df5989c5}\index{App@{App}!App@{App}}
+\index{App@{App}!App@{App}}
+\doxysubsubsection{\texorpdfstring{App()}{App()}}
+{\footnotesize\ttfamily \label{classApp_acb8cbf3e285b91d0170ffe87df5989c5} 
+App\+::\+App (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classApp_a02e2aa7f5671574106f64d2217de4e41}\index{App@{App}!convert\_num\_str@{convert\_num\_str}}
+\index{convert\_num\_str@{convert\_num\_str}!App@{App}}
+\doxysubsubsection{\texorpdfstring{convert\_num\_str()}{convert\_num\_str()}}
+{\footnotesize\ttfamily \label{classApp_a02e2aa7f5671574106f64d2217de4e41} 
+std\+::string App\+::convert\+\_\+num\+\_\+str (\begin{DoxyParamCaption}\item[{int}]{num}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Converts an int to a string and expands to two digits when necessary 
+\begin{DoxyParams}{Parameters}
+{\em num} & Conversion target \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Converted num 
+\end{DoxyReturn}
+\Hypertarget{classApp_a87f3c3252560736e4e98b51d20ea20e9}\index{App@{App}!get\_algorithm@{get\_algorithm}}
+\index{get\_algorithm@{get\_algorithm}!App@{App}}
+\doxysubsubsection{\texorpdfstring{get\_algorithm()}{get\_algorithm()}}
+{\footnotesize\ttfamily \label{classApp_a87f3c3252560736e4e98b51d20ea20e9} 
+\mbox{\hyperlink{classApp_a1b67d3d05d83f209b465750d89263f58}{App\+::\+Algorithm}} App\+::get\+\_\+algorithm (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classApp_a786c8dda5dd9f4fd8c72f7fcdcd6b6f1}\index{App@{App}!get\_algorithm\_name@{get\_algorithm\_name}}
+\index{get\_algorithm\_name@{get\_algorithm\_name}!App@{App}}
+\doxysubsubsection{\texorpdfstring{get\_algorithm\_name()}{get\_algorithm\_name()}}
+{\footnotesize\ttfamily \label{classApp_a786c8dda5dd9f4fd8c72f7fcdcd6b6f1} 
+std\+::string App\+::get\+\_\+algorithm\+\_\+name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classApp_a98eb332b95c1cf11981166570d83dc15}\index{App@{App}!get\_app\_state@{get\_app\_state}}
+\index{get\_app\_state@{get\_app\_state}!App@{App}}
+\doxysubsubsection{\texorpdfstring{get\_app\_state()}{get\_app\_state()}}
+{\footnotesize\ttfamily \label{classApp_a98eb332b95c1cf11981166570d83dc15} 
+\mbox{\hyperlink{classState_a5091fc7fac14f73979d57f0a6a510fb5}{State\+::\+State\+ID}} App\+::get\+\_\+app\+\_\+state (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classApp_a4f6e58f48d55fdb16f20562e5ee10e3a}\index{App@{App}!get\_dataset@{get\_dataset}}
+\index{get\_dataset@{get\_dataset}!App@{App}}
+\doxysubsubsection{\texorpdfstring{get\_dataset()}{get\_dataset()}}
+{\footnotesize\ttfamily \label{classApp_a4f6e58f48d55fdb16f20562e5ee10e3a} 
+\mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7}{App\+::\+Dataset}} App\+::get\+\_\+dataset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classApp_acc668761fc89e327f3d7182b5c2a50d3}\index{App@{App}!get\_dataset\_name@{get\_dataset\_name}}
+\index{get\_dataset\_name@{get\_dataset\_name}!App@{App}}
+\doxysubsubsection{\texorpdfstring{get\_dataset\_name()}{get\_dataset\_name()}}
+{\footnotesize\ttfamily \label{classApp_acc668761fc89e327f3d7182b5c2a50d3} 
+std\+::string App\+::get\+\_\+dataset\+\_\+name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classApp_a57d81e8651d703c48b89113e580e2e67}\index{App@{App}!get\_truck@{get\_truck}}
+\index{get\_truck@{get\_truck}!App@{App}}
+\doxysubsubsection{\texorpdfstring{get\_truck()}{get\_truck()}}
+{\footnotesize\ttfamily \label{classApp_a57d81e8651d703c48b89113e580e2e67} 
+\mbox{\hyperlink{classTruck}{Truck}} App\+::get\+\_\+truck (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classApp_a53b750fa72b2660c88975af0bc89ddf9}\index{App@{App}!read\_dataset@{read\_dataset}}
+\index{read\_dataset@{read\_dataset}!App@{App}}
+\doxysubsubsection{\texorpdfstring{read\_dataset()}{read\_dataset()}}
+{\footnotesize\ttfamily \label{classApp_a53b750fa72b2660c88975af0bc89ddf9} 
+void App\+::read\+\_\+dataset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classApp_ae09dc71078b64c56c673b1ad1d25b5d1}\index{App@{App}!run@{run}}
+\index{run@{run}!App@{App}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{classApp_ae09dc71078b64c56c673b1ad1d25b5d1} 
+void App\+::run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classApp_a6ee5475ab38d5035736fa7d76bd080ff}\index{App@{App}!set\_algorithm@{set\_algorithm}}
+\index{set\_algorithm@{set\_algorithm}!App@{App}}
+\doxysubsubsection{\texorpdfstring{set\_algorithm()}{set\_algorithm()}}
+{\footnotesize\ttfamily \label{classApp_a6ee5475ab38d5035736fa7d76bd080ff} 
+void App\+::set\+\_\+algorithm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classApp_a1b67d3d05d83f209b465750d89263f58}{Algorithm}}}]{alg}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classApp_ab6bb965162e6ff22dd14dba4d5027eff}\index{App@{App}!set\_dataset@{set\_dataset}}
+\index{set\_dataset@{set\_dataset}!App@{App}}
+\doxysubsubsection{\texorpdfstring{set\_dataset()}{set\_dataset()}}
+{\footnotesize\ttfamily \label{classApp_ab6bb965162e6ff22dd14dba4d5027eff} 
+void App\+::set\+\_\+dataset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classApp_a0e8ddfe41df9e55f8396b90fd6527af7}{Dataset}}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{app_8h}{app.\+h}}\item 
+\mbox{\hyperlink{app_8cpp}{app.\+cpp}}\end{DoxyCompactItemize}

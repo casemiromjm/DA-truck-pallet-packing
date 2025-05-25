@@ -1,0 +1,29 @@
+\doxysection{pallet.\+h}
+\hypertarget{pallet_8h_source}{}\label{pallet_8h_source}\index{data\_structures/pallet.h@{data\_structures/pallet.h}}
+\mbox{\hyperlink{pallet_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PALLET\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PALLET\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPallet_ada789ebe2ee26cc4c3ceb637a9216108}{Pallet}}\ \{}
+\DoxyCodeLine{00005\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00006\ \ \ \ \ \mbox{\hyperlink{classPallet_ada789ebe2ee26cc4c3ceb637a9216108}{Pallet}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{double}\ weight,\ \textcolor{keywordtype}{double}\ value);}
+\DoxyCodeLine{00007\ \ \ \ \ \mbox{\hyperlink{classPallet_a3a5253bf1220e3d1b7d1be498736938c}{\string~Pallet}}();}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classPallet_a6bd0d59bea99d14406abf89b4135414e}{get\_id}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classPallet_a637859371d8a2e873099d352c5c933d7}{get\_weight}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classPallet_a2f1299818d441bf7c7842bfef6d03876}{get\_value}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPallet_a9d2a734e58d6321323bb10e57e1ae380}{calculate\_weight\_value\_ratio}}();}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classPallet_aeab76a58130b9001ba220d97caa389a4}{get\_weight\_value\_ratio}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ id;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{double}\ weight;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{double}\ value;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{double}\ weight\_value\_ratio;\ \ \ \ \ \ \ \textcolor{comment}{//\ useful\ for\ greedy\ approach}}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

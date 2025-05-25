@@ -1,0 +1,29 @@
+\doxysection{algorithms/greedy.h File Reference}
+\hypertarget{greedy_8h}{}\label{greedy_8h}\index{algorithms/greedy.h@{algorithms/greedy.h}}
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}../app.\+h"{}}\newline
+{\ttfamily \#include "{}../data\+\_\+structures/truck.\+h"{}}\newline
+{\ttfamily \#include "{}../data\+\_\+structures/pallet.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structReturnResult}{Return\+Result}} \mbox{\hyperlink{greedy_8h_a2231e2e1678f11473f98612320743508}{greedy\+\_\+packing}} (const \mbox{\hyperlink{classTruck}{Truck}} \&truck, std\+::chrono\+::microseconds \&total\+\_\+duration, bool \&is\+Valid\+Run)
+\item 
+bool \mbox{\hyperlink{greedy_8h_a4764fdcf42178fa2f5ad5de07d82e390}{compare\+\_\+ratio}} (const \mbox{\hyperlink{classPallet}{Pallet}} \&a, const \mbox{\hyperlink{classPallet}{Pallet}} \&b)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{greedy_8h_a4764fdcf42178fa2f5ad5de07d82e390}\index{greedy.h@{greedy.h}!compare\_ratio@{compare\_ratio}}
+\index{compare\_ratio@{compare\_ratio}!greedy.h@{greedy.h}}
+\doxysubsubsection{\texorpdfstring{compare\_ratio()}{compare\_ratio()}}
+{\footnotesize\ttfamily \label{greedy_8h_a4764fdcf42178fa2f5ad5de07d82e390} 
+bool compare\+\_\+ratio (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPallet}{Pallet}} \&}]{a}{, }\item[{const \mbox{\hyperlink{classPallet}{Pallet}} \&}]{b}{}\end{DoxyParamCaption})}
+
+\Hypertarget{greedy_8h_a2231e2e1678f11473f98612320743508}\index{greedy.h@{greedy.h}!greedy\_packing@{greedy\_packing}}
+\index{greedy\_packing@{greedy\_packing}!greedy.h@{greedy.h}}
+\doxysubsubsection{\texorpdfstring{greedy\_packing()}{greedy\_packing()}}
+{\footnotesize\ttfamily \label{greedy_8h_a2231e2e1678f11473f98612320743508} 
+\mbox{\hyperlink{structReturnResult}{Return\+Result}} greedy\+\_\+packing (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTruck}{Truck}} \&}]{truck}{, }\item[{std\+::chrono\+::microseconds \&}]{total\+\_\+duration}{, }\item[{bool \&}]{is\+Valid\+Run}{}\end{DoxyParamCaption})}
+

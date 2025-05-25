@@ -1,0 +1,67 @@
+\doxysection{menu.\+h}
+\hypertarget{menu_8h_source}{}\label{menu_8h_source}\index{menu/menu.h@{menu/menu.h}}
+\mbox{\hyperlink{menu_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MENU\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MENU\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{state_8h}{state.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifdef\ \_WIN32\ \ \ \ \ \ \ }\textcolor{comment}{//\ assim\ o\ sebastiao\ consegue\ rodar\ tb}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \ \ \ \#include\ <conio.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\ \ \ \ \#define\ WIN\_KEY\_UP\ 72}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\ \ \ \ \#define\ WIN\_KEY\_DOWN\ 80}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\ \ \ \ \#define\ WINDOWS\_SPECIAL\_KEY\_2\ 224}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\ \ \ \ \#define\ WINDOWS\_SPECIAL\_KEY\_1\ 0}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\ \ \ \ \#define\ WIN\_KEY\_ENTER\ 13}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\ \ \ \ \#include\ <termios.h>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\ \ \ \ \#include\ <unistd.h>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\ \ \ \ \#define\ KEY\_UP\ 'A'}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\ \ \ \ \#define\ KEY\_DOWN\ 'B'}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\ \ \ \ \#define\ KEY\_ENTER\ 10}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ KEY\_UP\ 'A'}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ KEY\_DOWN\ 'B'}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ KEY\_ENTER\ 10}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ ESC\ 27}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMenu_a4e4972cad109d331f7e12b3527965291}{Menu}}\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classMenu_a4e4972cad109d331f7e12b3527965291}{Menu}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ options);}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{classMenu_a4e4972cad109d331f7e12b3527965291}{Menu}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ options,\ \textcolor{keyword}{const}\ std::string\ \&content);\ \ \textcolor{comment}{//\ tlvz\ add\ um\ param\ de\ content}}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{classMenu_a4e4972cad109d331f7e12b3527965291}{Menu}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ options,\ \textcolor{keyword}{const}\ std::string\ \&content,\ \textcolor{keyword}{const}\ std::string\&\ selection);}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{classMenu_a831387f51358cfb88cd018e1777bc980}{\string~Menu}}();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMenu_ab23e3ecd837ea4228151c0939027fdc2}{print\_options}}();}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMenu_ad934617065b71b0aeedf9607569493f3}{print\_content}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMenu_a139718455b849d1336cd7ed8c28f101c}{refresh\_screen}}();}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMenu_a24de75cc10faa44f0ada94b4fb0a06c1}{print\_selection}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMenu_aa6ff784314cc009478562d9ab7a0af34}{print}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMenu_a4e243c29642418de757ad88c9bae3211}{previous\_option}}();}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMenu_a64c04f77e4d1e11e85a62d860dbe1580}{next\_option}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classMenu_af93a970cdfec463a8cb25ca65bf51da5}{run}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00050\ \ \ \ \ std::string\ content;\ \ \ \ \textcolor{comment}{//\ content\ to\ be\ displayed}}
+\DoxyCodeLine{00051\ \ \ \ \ std::string\ selection;\ \ \ \ \ \ \textcolor{comment}{//\ selected\ algorithm\ and\ dataset}}
+\DoxyCodeLine{00052\ \ \ \ \ std::vector<std::string>\ options;\ \ \ \textcolor{comment}{//\ menu\ options}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ current\_option;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_selected(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ i);}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ print\_selected();}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ getch();\ \ \ \ \textcolor{comment}{//\ Low-\/level\ implementation\ for\ input\ handling}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ get\_key();\ \ \ \ \ \textcolor{comment}{//\ High-\/level\ wrapper\ of\ getch()}}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

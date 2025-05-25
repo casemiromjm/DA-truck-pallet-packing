@@ -1,0 +1,31 @@
+\doxysection{truck.\+h}
+\hypertarget{truck_8h_source}{}\label{truck_8h_source}\index{data\_structures/truck.h@{data\_structures/truck.h}}
+\mbox{\hyperlink{truck_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TRUCK\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TRUCK\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pallet_8h}{pallet.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTruck_a686c622fa672ebb96d37f57527029dba}{Truck}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{classTruck_a686c622fa672ebb96d37f57527029dba}{Truck}}(\textcolor{keywordtype}{double}\ capacity,\ \textcolor{keywordtype}{double}\ max\_pallets);}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{classTruck_afe887186d0490451a8ce4a3ef433dee3}{\string~Truck}}();}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTruck_ab0b850730ff4ce90bb74101296a85cff}{get\_capacity}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTruck_a64792977a53438209e8719d958bdafda}{get\_num\_pallets}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ std::vector<Pallet>\ \mbox{\hyperlink{classTruck_a4b913cbca9622e527b8ad8110abbf684}{get\_available\_pallets}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTruck_ad4930c6c95d99d17f54e6835ac660201}{add\_available\_pallet}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPallet}{Pallet}}\&\ pallet);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ capacity;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ num\_pallets;}
+\DoxyCodeLine{00022\ \ \ \ \ std::vector<Pallet>\ available\_pallets;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ n\ é\ definitivo\ (vector),\ pq\ n\ sei\ como\ seriam\ os\ algoritmos}}
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
