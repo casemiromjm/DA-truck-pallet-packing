@@ -2,6 +2,24 @@
 #include <vector>
 #include <chrono>
 
+bool is_better_dp_solution(double new_val, const std::vector<int>& new_indices,
+                           double old_val, const std::vector<int>& old_indices) {
+    if (new_val > old_val) return true;
+    if (new_val < old_val) return false;
+
+    // Desempate 1: menor número de pallets
+    if (new_indices.size() < old_indices.size()) return true;
+    if (new_indices.size() > old_indices.size()) return false;
+
+    // Desempate 2: ordem lexicográfica dos índices
+    for (size_t i = 0; i < new_indices.size(); ++i) {
+        if (new_indices[i] < old_indices[i]) return true;
+        if (new_indices[i] > old_indices[i]) return false;
+    }
+
+    return false;
+}
+
 static const auto TIME_LIMIT = std::chrono::microseconds(90000000);
 
 ReturnResult dp_packing(const Truck& truck, std::chrono::microseconds& total_duration, bool& isValidRun) {
@@ -27,7 +45,7 @@ ReturnResult dp_packing(const Truck& truck, std::chrono::microseconds& total_dur
         // só é preciso atualizar os valores quando a capacidade >= peso da palete a verificar
         for (int w = truck_capacity; w >= weight; w--) {
             double new_val = dp_array[w - weight] + val;
-            if (new_val > dp_array[w]) {
+            if (is_better_dp_solution(new_val, selected_pallets[w - weight], dp_array[w], selected_pallets[w])) {
                 dp_array[w] = new_val;
 
                 // atualizar paletes usadas

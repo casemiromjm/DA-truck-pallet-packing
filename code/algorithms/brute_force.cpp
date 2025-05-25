@@ -106,7 +106,7 @@ ReturnResult brute_force_packing(const Truck& truck, std::chrono::microseconds& 
 
 //backtracking
 void backtrack(const std::vector<Pallet>& pallets, int index, double current_weight, double current_value, int max_capacity,
-    std::vector<Pallet>& current_solution,  ReturnResult& best_result, bool& isValidRun, std::chrono::time_point<std::chrono::system_clock> start_time) {
+    std::vector<Pallet>& current_solution,  ReturnResult& best_result, bool& isValidRun, std::chrono::time_point<std::chrono::high_resolution_clock> start_time) {
 
     //caso base, ou seja, já percorreu todas as paletes
     if (index == pallets.size()) {
@@ -149,7 +149,7 @@ void backtrack(const std::vector<Pallet>& pallets, int index, double current_wei
 //função principal
 ReturnResult brute_force_backtracking(const Truck& truck, std::chrono::microseconds& total_duration, bool& isValidRun) {
 
-    auto start_time = std::chrono::high_resolution_clock::now();
+    std::chrono::time_point<std::chrono::high_resolution_clock> start_time = std::chrono::high_resolution_clock::now();
 
     const auto& pallets = truck.get_available_pallets();
     int capacity = truck.get_capacity();
