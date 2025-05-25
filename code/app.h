@@ -8,11 +8,19 @@
 #include "menu/state.h"
 #include "data_structures/truck.h"
 
+//store the data to the output
+struct ReturnResult {
+    std::vector<Pallet> pallets;
+    double total_weight = 0.0;
+    double total_value = 0.0;
+};
+
 class App {
 public:
     enum class Algorithm {
         NONE,
         BRUTE_FORCE,
+        BRUTE_FORCE_BACKTRACKING,
         DYNAMIC,
         GREEDY,
     };
@@ -56,6 +64,7 @@ private:
     std::vector<std::string> algorithm_names = {
         "None",
         "Brute-Force",
+        "Brute-Force Backtracking",
         "Dynamic Programming",
         "Greedy",
     };
@@ -82,9 +91,10 @@ private:
 
     std::chrono::microseconds total_duration{0};
 
-    std::vector<Pallet> run_brute_force();
-    std::vector<Pallet> run_dp();
-    std::vector<Pallet> run_greedy();
+    ReturnResult run_brute_force();
+    ReturnResult run_dp();
+    ReturnResult run_greedy();
+    ReturnResult run_brute_force_backtracking();
 };
 
 #endif

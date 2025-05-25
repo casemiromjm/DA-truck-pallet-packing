@@ -47,6 +47,7 @@ int UI::show_info_menu() {
         },
         "- Good interactive menu\n"
                   "- Brute Force approach\n"
+                  "- Brute-Force Backtracking Approach\n"
                   "- Dynamic Programming approach\n"
                   "- Greedy approach"
     );
@@ -93,8 +94,9 @@ int UI::show_algorithm_menu() {
         {
         "0. Go back to Main Menu",
         "1. Brute-Force Approach",
-        "2. Dynamic Programming Approach",
-        "3. Greedy Approach",
+        "2. Brute-Force Backtracking Approach",
+        "3. Dynamic Programming Approach",
+        "4. Greedy Approach",
         }
     );
 
@@ -107,16 +109,28 @@ int UI::show_algorithm_menu() {
  * @param total_duration
  * @return
  */
-int UI::show_results_menu(std::vector<Pallet> result, const std::chrono::microseconds &total_duration) {
+int UI::show_results_menu(ReturnResult result, const std::chrono::microseconds &total_duration) {
 
     std::string content;
-    std::string final_duration = "Time elapsed: " + std::to_string(total_duration.count());
 
-    for (int i = 0; i < result.size(); i++) {
-        content += std::to_string(result[i].get_id()) + ", "  + std::to_string(result[i].get_weight()) + ", " + std::to_string(result[i].get_value()) + '\n';
+    if (result.pallets.size() != 0) {
+        content += "Selected Pallet:\n";
+
+        //selected pallets
+        for (const auto& pallet : result.pallets) {
+            content += std::to_string(pallet.get_id()) + ", " + std::to_string(pallet.get_weight()) + ", " + std::to_string(pallet.get_value()) + '\n';
+        }
+
+        content += "\nNumber of pallets: " + std::to_string(result.pallets.size()) + "\n";
+        content += "Total weight: " + std::to_string(result.total_weight) + "\n";
+        content += "Total value: " + std::to_string(result.total_value) + "\n";
+    } else {
+        content += "Not able to solve :(";
     }
 
-    content += '\n' + final_duration + " \u00B5s";
+
+
+    content += "\nTime elapsed: " + std::to_string(total_duration.count()) + " \u00B5s";
 
     Menu results(
         {
