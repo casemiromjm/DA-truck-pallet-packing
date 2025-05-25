@@ -60,7 +60,7 @@ int UI::show_info_menu() {
  */
 int UI::show_dataset_menu() {
 
-    // add custom dataset option
+    std::string cont = "For running Custom Dataset, it has to be inside /data/datasets and be the 11th";
 
     Menu dataset(
         {
@@ -75,7 +75,9 @@ int UI::show_dataset_menu() {
             "8. Example Dataset 8",
             "9. Example Dataset 9",
             "10. Example Dataset 10",
-        }
+            "11. Custom Dataset"
+        },
+        cont
     );
 
     return dataset.run();
@@ -93,7 +95,6 @@ int UI::show_algorithm_menu() {
         "1. Brute-Force Approach",
         "2. Dynamic Programming Approach",
         "3. Greedy Approach",
-        "4. Integer Linear Programming Approach",
         }
     );
 
