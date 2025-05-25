@@ -3,6 +3,7 @@
 #include <chrono>
 #include "greedy.h"
 
+static const auto TIME_LIMIT = std::chrono::microseconds(90000000);
 
 // Função auxiliar de comparar rácios valor/peso das paletes
 bool compare_ratio(const Pallet& a, const Pallet& b) {
@@ -13,7 +14,7 @@ bool compare_ratio(const Pallet& a, const Pallet& b) {
     return a.get_weight_value_ratio() > b.get_weight_value_ratio();
 }
 
-ReturnResult greedy_packing(const Truck& truck, std::chrono::microseconds& total_duration) {
+ReturnResult greedy_packing(const Truck& truck, std::chrono::microseconds& total_duration, bool& isValidRun) {
 
     auto start_time = std::chrono::high_resolution_clock::now();
 
@@ -41,6 +42,11 @@ ReturnResult greedy_packing(const Truck& truck, std::chrono::microseconds& total
             remaining_capacity -= pallet.get_weight();
             total_weight += pallet.get_weight();
             total_value += pallet.get_value();
+        }
+
+        if (std::chrono::high_resolution_clock::now() - start_time >= TIME_LIMIT) {
+            isValidRun = false;
+            return {{}, 0,0};
         }
     }
 

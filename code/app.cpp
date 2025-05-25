@@ -46,7 +46,6 @@ Truck App::get_truck() const {
     return truck;
 }
 
-
 void App::read_dataset() {
     Csv file;
 
@@ -87,19 +86,23 @@ std::string App::convert_num_str(int num) {
 }
 
 ReturnResult App::run_brute_force() {
-    return brute_force_packing(truck, total_duration);
+    bool mock_validrun = true;
+    return brute_force_packing(truck, total_duration, mock_validrun);
 }
 
 ReturnResult App::run_dp() {
-    return dp_packing(truck, total_duration);
+    bool mock_validrun = true;
+    return dp_packing(truck, total_duration, mock_validrun);
 }
 
 ReturnResult App::run_greedy() {
-    return greedy_packing(truck, total_duration);
+    bool mock_validrun = true;
+    return greedy_packing(truck, total_duration, mock_validrun);
 }
 
 ReturnResult App::run_brute_force_backtracking() {
-    return brute_force_backtracking(truck, total_duration);
+    bool mock_validrun = true;
+    return brute_force_backtracking(truck, total_duration, mock_validrun);
 }
 
 void App::run() {

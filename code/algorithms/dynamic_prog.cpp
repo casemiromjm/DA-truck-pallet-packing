@@ -2,7 +2,9 @@
 #include <vector>
 #include <chrono>
 
-ReturnResult dp_packing(const Truck& truck, std::chrono::microseconds& total_duration) {
+static const auto TIME_LIMIT = std::chrono::microseconds(90000000);
+
+ReturnResult dp_packing(const Truck& truck, std::chrono::microseconds& total_duration, bool& isValidRun) {
 
     auto start_time = std::chrono::high_resolution_clock::now();
 
@@ -31,6 +33,11 @@ ReturnResult dp_packing(const Truck& truck, std::chrono::microseconds& total_dur
                 // atualizar paletes usadas
                 selected_pallets[w] = selected_pallets[w - weight];
                 selected_pallets[w].push_back(i);
+            }
+
+            if (std::chrono::high_resolution_clock::now() - start_time >= TIME_LIMIT) {
+                isValidRun = false;
+                return {{}, 0,0};
             }
         }
     }
