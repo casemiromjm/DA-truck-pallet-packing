@@ -61,7 +61,7 @@ int UI::show_info_menu() {
  */
 int UI::show_dataset_menu() {
 
-    // add custom dataset option
+    std::string cont = "For running Custom Dataset, it has to be inside /data/datasets and be the 11th";
 
     Menu dataset(
         {
@@ -76,7 +76,9 @@ int UI::show_dataset_menu() {
             "8. Example Dataset 8",
             "9. Example Dataset 9",
             "10. Example Dataset 10",
-        }
+            "11. Custom Dataset"
+        },
+        cont
     );
 
     return dataset.run();
@@ -95,7 +97,6 @@ int UI::show_algorithm_menu() {
         "2. Brute-Force Backtracking Approach",
         "3. Dynamic Programming Approach",
         "4. Greedy Approach",
-        "5. Integer Linear Programming Approach",
         }
     );
 
@@ -111,16 +112,23 @@ int UI::show_algorithm_menu() {
 int UI::show_results_menu(ReturnResult result, const std::chrono::microseconds &total_duration) {
 
     std::string content;
-    content += "Selected Pallet:\n";
 
-    //selected pallets
-    for (const auto& pallet : result.pallets) {
-        content += std::to_string(pallet.get_id()) + ", " + std::to_string(pallet.get_weight()) + ", " + std::to_string(pallet.get_value()) + '\n';
+    if (result.pallets.size() != 0) {
+        content += "Selected Pallet:\n";
+
+        //selected pallets
+        for (const auto& pallet : result.pallets) {
+            content += std::to_string(pallet.get_id()) + ", " + std::to_string(pallet.get_weight()) + ", " + std::to_string(pallet.get_value()) + '\n';
+        }
+
+        content += "\nNumber of pallets: " + std::to_string(result.pallets.size()) + "\n";
+        content += "Total weight: " + std::to_string(result.total_weight) + "\n";
+        content += "Total value: " + std::to_string(result.total_value) + "\n";
+    } else {
+        content += "Not able to solve :(";
     }
 
-    content += "\nNumber of pallets: " + std::to_string(result.pallets.size()) + "\n";
-    content += "Total weight: " + std::to_string(result.total_weight) + "\n";
-    content += "Total value: " + std::to_string(result.total_value) + "\n";
+
 
     content += "\nTime elapsed: " + std::to_string(total_duration.count()) + " \u00B5s";
 

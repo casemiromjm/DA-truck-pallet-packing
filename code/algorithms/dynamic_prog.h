@@ -7,6 +7,6 @@
 #include "../data_structures/truck.h"
 #include "../data_structures/pallet.h"
 
-ReturnResult dp_packing(const Truck& truck, std::chrono::microseconds& total_duration);
+ReturnResult dp_packing(const Truck& truck, std::chrono::microseconds& total_duration, bool& isValidRun);
 
 #endif //DYNAMIC_PROG_H

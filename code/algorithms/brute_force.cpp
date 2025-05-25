@@ -1,6 +1,7 @@
 #include "brute_force.h"
 #include <algorithm>
 
+
 //to compare the solutions
 bool is_better_solution(const std::vector<Pallet>& new_solution, double new_value,
                         const std::vector<Pallet>& current_best, double current_value) {
@@ -30,8 +31,10 @@ bool is_better_solution(const std::vector<Pallet>& new_solution, double new_valu
     return false;
 }
 
+static const auto TIME_LIMIT = std::chrono::microseconds(90000000);
+
 //brute force
-ReturnResult brute_force_packing(const Truck& truck, std::chrono::microseconds& total_duration) {
+ReturnResult brute_force_packing(const Truck& truck, std::chrono::microseconds& total_duration, bool& isValidRun) {
 
     auto start_time = std::chrono::high_resolution_clock::now();
 
@@ -39,6 +42,13 @@ ReturnResult brute_force_packing(const Truck& truck, std::chrono::microseconds& 
     int truck_capacity = truck.get_capacity();
 
     int n = available_pallets.size();
+
+    // checagem
+    if (n >= 20) {
+        isValidRun = false;
+        return {{}, 0, 0};
+    }
+
     int bit_mask;
 
     ReturnResult best_result;
@@ -80,6 +90,11 @@ ReturnResult brute_force_packing(const Truck& truck, std::chrono::microseconds& 
             best_result.total_value = current_value;
             best_result.total_weight = current_weight;
         }
+
+        if (std::chrono::high_resolution_clock::now() - start_time >= TIME_LIMIT) {
+            isValidRun = false;
+            return {{}, 0,0};
+        }
     }
 
     auto end_time = std::chrono::high_resolution_clock::now();
@@ -91,7 +106,7 @@ ReturnResult brute_force_packing(const Truck& truck, std::chrono::microseconds& 
 
 //backtracking
 void backtrack(const std::vector<Pallet>& pallets, int index, double current_weight, double current_value, int max_capacity,
-    std::vector<Pallet>& current_solution,  ReturnResult& best_result) {
+    std::vector<Pallet>& current_solution,  ReturnResult& best_result, bool& isValidRun, std::chrono::time_point<std::chrono::system_clock> start_time) {
 
     //caso base, ou seja, já percorreu todas as paletes
     if (index == pallets.size()) {
@@ -107,6 +122,12 @@ void backtrack(const std::vector<Pallet>& pallets, int index, double current_wei
         return;
     }
 
+    // checagem
+    if (std::chrono::high_resolution_clock::now() - start_time >= TIME_LIMIT) {
+        isValidRun = false;
+        return;
+    }
+
     //logica do backtracking, primeiro tentar incluir a palete atual se ele respeitar as capacidades max
     if (current_weight + pallets[index].get_weight() <= max_capacity) {
 
@@ -115,18 +136,18 @@ void backtrack(const std::vector<Pallet>& pallets, int index, double current_wei
 
         //chamar o backtracking atualizando o index da palete (+1 porque adicionamos 1), o peso atual (somar o da palete colocada) e o valor atual com a mesma logica
         backtrack(pallets, index + 1, current_weight + pallets[index].get_weight(), current_value + pallets[index].get_value(),
-                  max_capacity, current_solution, best_result);
+                  max_capacity, current_solution, best_result, isValidRun, start_time);
 
         //no fim remover a palete
         current_solution.pop_back();
     }
 
     //agora tentar sem incluir a palete para ver qual o melhor (neste caso so muda o index porque "saltamos" a palete
-    backtrack(pallets, index + 1, current_weight, current_value, max_capacity, current_solution, best_result);
+    backtrack(pallets, index + 1, current_weight, current_value, max_capacity, current_solution, best_result, isValidRun, start_time);
 }
 
 //função principal
-ReturnResult brute_force_backtracking(const Truck& truck, std::chrono::microseconds& total_duration) {
+ReturnResult brute_force_backtracking(const Truck& truck, std::chrono::microseconds& total_duration, bool& isValidRun) {
 
     auto start_time = std::chrono::high_resolution_clock::now();
 
@@ -140,8 +161,11 @@ ReturnResult brute_force_backtracking(const Truck& truck, std::chrono::microseco
     best_result.total_value = 0.0;
     best_result.total_weight = 0.0;
 
+    backtrack(pallets, 0, 0.0, 0.0, capacity, current_solution, best_result, isValidRun, start_time);
 
-    backtrack(pallets, 0, 0.0, 0.0, capacity, current_solution, best_result);
+    if (!isValidRun) {
+        return {{}, 0, 0};
+    }
 
     auto end_time = std::chrono::high_resolution_clock::now();
     total_duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
