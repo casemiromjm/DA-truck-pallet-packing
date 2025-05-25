@@ -23,7 +23,6 @@ public:
         BRUTE_FORCE_BACKTRACKING,
         DYNAMIC,
         GREEDY,
-        ILP
     };
 
     enum class Dataset {
@@ -37,7 +36,8 @@ public:
         DATASET7,
         DATASET8,
         DATASET9,
-        DATASET10
+        DATASET10,
+        CUSTOM_DATASET
     };
 
     App();
@@ -67,7 +67,6 @@ private:
         "Brute-Force Backtracking",
         "Dynamic Programming",
         "Greedy",
-        "ILP"
     };
 
     std::vector<std::string> dataset_names = {
@@ -82,6 +81,7 @@ private:
         "Example 8",
         "Example 9",
         "Example 10",
+        "Custom"
     };
 
     Algorithm chosen_algorithm = Algorithm::NONE;
