@@ -2,7 +2,9 @@
 #include <vector>
 #include <chrono>
 
-std::vector<Pallet> dp_packing(const Truck& truck, std::chrono::microseconds& total_duration) {
+static const auto TIME_LIMIT = std::chrono::microseconds(90000000);
+
+ReturnResult dp_packing(const Truck& truck, std::chrono::microseconds& total_duration, bool& isValidRun) {
 
     auto start_time = std::chrono::high_resolution_clock::now();
 
@@ -32,19 +34,28 @@ std::vector<Pallet> dp_packing(const Truck& truck, std::chrono::microseconds& to
                 selected_pallets[w] = selected_pallets[w - weight];
                 selected_pallets[w].push_back(i);
             }
+
+            if (std::chrono::high_resolution_clock::now() - start_time >= TIME_LIMIT) {
+                isValidRun = false;
+                return {{}, 0,0};
+            }
         }
     }
 
     // Reconstroi paletes selecionadas
-    std::vector<Pallet> best_subset;
+    ReturnResult result;
+    result.total_value = dp_array[truck_capacity];
+    result.total_weight = 0.0;
+
     for (int idx : selected_pallets[selected_pallets.size() - 1]) {
-        best_subset.push_back(available_pallets[idx]);
+        result.pallets.push_back(available_pallets[idx]);
+        result.total_weight += available_pallets[idx].get_weight();
     }
 
     auto end_time = std::chrono::high_resolution_clock::now();
     total_duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
 
-    return best_subset;
+    return result;
 }
 
 

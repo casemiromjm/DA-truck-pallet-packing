@@ -3,10 +3,11 @@
 
 #include <chrono>
 #include <vector>
+#include "../app.h"
 #include "../data_structures/truck.h"
 #include "../data_structures/pallet.h"
 
-std::vector<Pallet> greedy_packing(const Truck& truck, std::chrono::microseconds& total_duration);
+ReturnResult greedy_packing(const Truck& truck, std::chrono::microseconds& total_duration, bool& isValidRun);
 
 bool compare_ratio(const Pallet& a, const Pallet& b);
 
