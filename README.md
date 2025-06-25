@@ -1,13 +1,12 @@
-# Truck Pallet Packing Optimization Problem
+# Truck Pallet Packing Optimization Tool
 
 ## Description
-This programming assignment focuses on the Delivery Truck Pallet Packing Optimization Problem, a real-world variation of the 0/1 knapsack Problem (0/1 KP). The goal is to optimize the packing of pallets in a delivery truck to maximize profit while respecting the truck’s maximum weight capacity.
+This tool works as a simple way to handle the Delivery Truck Pallet Packing Optimization Problem, a real-world variation of the 0/1 knapsack Problem (0/1 KP). The goal is to optimize the packing of pallets in a delivery truck to maximize profit while respecting the truck’s maximum weight capacity.
 
 Use different algorithms approaches:
 - Exhaustive (Brute-Force) Search
 - Dynamic Programming
 - Approximation (Greedy) Algorithms
-- Integer Linear Programming
 
 ## Data
 Data used in the project is inside the `data` folder. A datset is structed as 2 CSV files: `TruckAndPallets_[X].csv` and `Pallets_[X].csv`. The first contains the truck capacity and number of pallets, while the second contains the pallets' weights and profits. The `[X]` is the identifier of the dataset.
