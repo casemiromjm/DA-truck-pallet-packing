@@ -9,7 +9,12 @@
 
 .DS_Store
 **/.DS_Store
+
 .idea/
+.vscode/
+
 **/cmake-build-debug/
+build/
+
 DA2425_PRJ2_G307.zip
 *.zip

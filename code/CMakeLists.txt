@@ -1,9 +1,9 @@
-cmake_minimum_required(VERSION 3.30)
-project(code)
+cmake_minimum_required(VERSION 3.28)
+project(truck-pallet-packing)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(code main.cpp
+add_executable(truck-pallet-packing main.cpp
         menu/menu.cpp
         menu/state.cpp
         menu/ui_flow.cpp
